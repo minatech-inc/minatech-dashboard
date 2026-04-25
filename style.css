@@ -494,6 +494,75 @@ body {
 }
 
 /* ============================================
+   ACTION BUTTONS (Action Dashboard pattern)
+   ============================================ */
+
+.action-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.action-btn svg {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   TOAST
+   ============================================ */
+
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 

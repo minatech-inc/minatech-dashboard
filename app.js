@@ -249,7 +249,10 @@ function renderSesTable(d, filter = 'all') {
     return;
   }
 
-  tbody.innerHTML = items.map(it => `
+  tbody.innerHTML = items.map(it => {
+    const projKey = (it.name || '').slice(0, 20).split(/[【】\s]/).filter(Boolean)[0] || '案件';
+    const cmd = `python scripts/generate_proposal.py --project "${projKey}"`;
+    return `
     <tr>
       <td><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
       <td><span class="cell-truncate" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span></td>
@@ -258,9 +261,24 @@ function renderSesTable(d, filter = 'all') {
       <td>${escapeHtml(it.work_style || '-')}</td>
       <td>${escapeHtml(it.location || '-')}</td>
       <td>${renderSkillTags(it.skills)}</td>
-      <td>${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
-    </tr>
-  `).join('');
+      <td class="action-cell">
+        ${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">案件 →</a>` : '-'}
+        <button class="action-btn" data-cmd="${escapeHtml(cmd)}" title="提案書生成コマンドをコピー">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          提案書生成
+        </button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  tbody.querySelectorAll('.action-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cmd = btn.dataset.cmd;
+      copyToClipboard(cmd);
+      showToast('コマンドをコピーしました。ターミナルで実行してください');
+    });
+  });
 }
 
 // ========== FILTER ==========
@@ -318,6 +336,36 @@ function hexToRgba(hex, alpha) {
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text);
+    return;
+  }
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (e) { console.error(e); }
+  document.body.removeChild(ta);
+}
+
+let toastTimer = null;
+function showToast(msg) {
+  let toast = document.getElementById('mt-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'mt-toast';
+    toast.className = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('toast-visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('toast-visible'), 2800);
 }
 
 // ========== INIT ==========
