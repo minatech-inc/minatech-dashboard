@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinaTech 経営ダッシュボード</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">MinaTech</div>
+        <div class="brand-sub">Executive Dashboard</div>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <div class="meta-item">
+        <span class="meta-label">最終更新</span>
+        <span class="meta-value" id="last-updated">—</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">データソース</span>
+        <span class="meta-value">MinaTech-Agent</span>
+      </div>
+      <button class="refresh-btn" onclick="location.reload()" aria-label="再読み込み">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ============ KPI CARDS ============ -->
+  <section class="kpi-grid">
+    <div class="kpi-card kpi-card-primary">
+      <div class="kpi-label">本日の高優先物件</div>
+      <div class="kpi-value" id="kpi-realestate-priority">—</div>
+      <div class="kpi-trend">
+        <span class="kpi-trend-label">S評価</span>
+        <span class="kpi-trend-value" id="kpi-realestate-s">—</span>
+        <span class="kpi-trend-divider">/</span>
+        <span class="kpi-trend-label">A評価</span>
+        <span class="kpi-trend-value" id="kpi-realestate-a">—</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">SES 今週提案候補</div>
+      <div class="kpi-value" id="kpi-ses-priority">—</div>
+      <div class="kpi-trend">
+        <span class="kpi-trend-label">月粗利見込</span>
+        <span class="kpi-trend-value" id="kpi-ses-margin">—</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">本日の収集データ</div>
+      <div class="kpi-value" id="kpi-total-collected">—</div>
+      <div class="kpi-trend">
+        <span class="kpi-trend-label">不動産</span>
+        <span class="kpi-trend-value" id="kpi-realestate-total">—</span>
+        <span class="kpi-trend-divider">/</span>
+        <span class="kpi-trend-label">SES</span>
+        <span class="kpi-trend-value" id="kpi-ses-total">—</span>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-label">運用ステータス</div>
+      <div class="kpi-value-status" id="kpi-status">
+        <span class="status-dot status-ok"></span>
+        正常稼働
+      </div>
+      <div class="kpi-trend">
+        <span class="kpi-trend-label">次回実行</span>
+        <span class="kpi-trend-value" id="kpi-next-run">明日 09:00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHART ROW ============ -->
+  <section class="chart-row">
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">不動産 価格×利回り 散布</h2>
+        <div class="panel-sub">本日収集データの分布（優先度別）</div>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart-realestate-scatter"></canvas>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <h2 class="panel-title">SES 単価分布</h2>
+        <div class="panel-sub">月単価レンジ別の案件数</div>
+      </div>
+      <div class="chart-container">
+        <canvas id="chart-ses-bars"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REAL ESTATE TABLE ============ -->
+  <section class="panel">
+    <div class="panel-header panel-header-with-action">
+      <div>
+        <h2 class="panel-title">🏠 本日の優良物件</h2>
+        <div class="panel-sub">優先度S/Aのみ・スコア降順</div>
+      </div>
+      <div class="filter-tabs" id="realestate-filters">
+        <button class="filter-tab active" data-filter="all">すべて</button>
+        <button class="filter-tab" data-filter="S">S</button>
+        <button class="filter-tab" data-filter="A">A</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>優先度</th>
+            <th>物件名</th>
+            <th>所在地</th>
+            <th class="num">価格</th>
+            <th class="num">利回り</th>
+            <th class="num">築年</th>
+            <th class="num">駅徒歩</th>
+            <th>判断根拠</th>
+            <th>リンク</th>
+          </tr>
+        </thead>
+        <tbody id="realestate-tbody">
+          <tr><td colspan="9" class="loading">読み込み中…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ SES TABLE ============ -->
+  <section class="panel">
+    <div class="panel-header panel-header-with-action">
+      <div>
+        <h2 class="panel-title">💼 SES 提案候補案件</h2>
+        <div class="panel-sub">優先度A/B・粗利降順</div>
+      </div>
+      <div class="filter-tabs" id="ses-filters">
+        <button class="filter-tab active" data-filter="all">すべて</button>
+        <button class="filter-tab" data-filter="A">A</button>
+        <button class="filter-tab" data-filter="B">B</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>優先度</th>
+            <th>案件名</th>
+            <th class="num">月単価</th>
+            <th class="num">月粗利</th>
+            <th>稼働形態</th>
+            <th>勤務地</th>
+            <th>必須スキル</th>
+            <th>リンク</th>
+          </tr>
+        </thead>
+        <tbody id="ses-tbody">
+          <tr><td colspan="8" class="loading">読み込み中…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ TREND ============ -->
+  <section class="panel">
+    <div class="panel-header">
+      <h2 class="panel-title">📈 過去14日のデータ収集推移</h2>
+      <div class="panel-sub">日次の検出数トレンド</div>
+    </div>
+    <div class="chart-container chart-tall">
+      <canvas id="chart-trend"></canvas>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 MinaTech, Inc. / Internal Dashboard</div>
+    <div class="footer-meta">毎朝 09:00 自動更新 / Source: minatech-inc/MinaTech-Agent</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
