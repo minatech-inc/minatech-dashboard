@@ -530,8 +530,44 @@ body {
   transform: translateY(0);
 }
 
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .action-btn svg {
   flex-shrink: 0;
+}
+
+.action-btn-loading svg {
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   AGENT STATUS INDICATOR
+   ============================================ */
+
+.agent-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot.status-checking {
+  background: var(--text-tertiary);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+.status-dot.status-warn {
+  background: var(--status-warn);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+.status-dot.status-err {
+  background: var(--status-err);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
 }
 
 /* ============================================
@@ -560,6 +596,19 @@ body {
 .toast-visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+.toast-ok {
+  border-color: var(--status-ok);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(16, 185, 129, 0.3);
+}
+.toast-warn {
+  border-color: var(--status-warn);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+.toast-err {
+  border-color: var(--status-err);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(239, 68, 68, 0.3);
 }
 
 /* ============================================

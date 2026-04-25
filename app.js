@@ -2,11 +2,16 @@
    MinaTech Executive Dashboard - Application Logic
    ============================================ */
 
+// Local Agent API endpoint
+const AGENT_API = 'http://127.0.0.1:8765';
+
 // Chart.js global defaults — match dashboard theme
 Chart.defaults.color = '#a8b2c5';
 Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
 Chart.defaults.font.family = "'Inter', 'Noto Sans JP', sans-serif";
 Chart.defaults.font.size = 11;
+
+let AGENT_AVAILABLE = false;
 
 const PRIORITY_COLORS = {
   S: '#ef4444',
@@ -251,7 +256,6 @@ function renderSesTable(d, filter = 'all') {
 
   tbody.innerHTML = items.map(it => {
     const projKey = (it.name || '').slice(0, 20).split(/[【】\s]/).filter(Boolean)[0] || '案件';
-    const cmd = `python scripts/generate_proposal.py --project "${projKey}"`;
     return `
     <tr>
       <td><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
@@ -263,9 +267,9 @@ function renderSesTable(d, filter = 'all') {
       <td>${renderSkillTags(it.skills)}</td>
       <td class="action-cell">
         ${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">案件 →</a>` : '-'}
-        <button class="action-btn" data-cmd="${escapeHtml(cmd)}" title="提案書生成コマンドをコピー">
+        <button class="action-btn" data-project="${escapeHtml(projKey)}" data-name="${escapeHtml(it.name)}" title="提案書をAIエージェントが生成">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          提案書生成
+          <span class="btn-label">提案書生成</span>
         </button>
       </td>
     </tr>`;
@@ -274,11 +278,85 @@ function renderSesTable(d, filter = 'all') {
   tbody.querySelectorAll('.action-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const cmd = btn.dataset.cmd;
-      copyToClipboard(cmd);
-      showToast('コマンドをコピーしました。ターミナルで実行してください');
+      generateProposal(btn);
     });
   });
+}
+
+// ========== AGENT API CALLS ==========
+
+async function checkAgentHealth() {
+  const dot = document.getElementById('agent-status-dot');
+  const label = document.getElementById('agent-status-label');
+  try {
+    const res = await fetch(`${AGENT_API}/api/health`, {
+      method: 'GET',
+      signal: AbortSignal.timeout(2000),
+    });
+    if (!res.ok) throw new Error('not ok');
+    const data = await res.json();
+    AGENT_AVAILABLE = true;
+    if (data.has_api_key) {
+      dot.className = 'status-dot status-ok';
+      label.textContent = 'オンライン';
+    } else {
+      dot.className = 'status-dot status-warn';
+      label.textContent = 'API key未設定';
+      AGENT_AVAILABLE = false;
+    }
+  } catch (e) {
+    AGENT_AVAILABLE = false;
+    dot.className = 'status-dot status-err';
+    label.textContent = 'オフライン';
+  }
+}
+
+async function generateProposal(btn) {
+  const project = btn.dataset.project;
+  const projectName = btn.dataset.name;
+
+  if (!AGENT_AVAILABLE) {
+    showToast('エージェントサーバーが起動していません。start_server.bat を実行してください', 'warn');
+    return;
+  }
+
+  btn.disabled = true;
+  const labelEl = btn.querySelector('.btn-label');
+  const originalLabel = labelEl.textContent;
+  labelEl.textContent = '生成中…';
+  btn.classList.add('action-btn-loading');
+
+  try {
+    const res = await fetch(`${AGENT_API}/api/generate-proposal`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ project, open_file: true }),
+      signal: AbortSignal.timeout(180_000),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`HTTP ${res.status}: ${text}`);
+    }
+
+    const data = await res.json();
+    if (data.ok) {
+      const fileCount = data.files?.length || 0;
+      showToast(`「${projectName.slice(0, 30)}」の提案書を生成完了（${fileCount}ファイル、Wordを自動オープン）`, 'ok');
+    } else {
+      showToast(`生成失敗: ${data.error || '不明なエラー'}`, 'err');
+    }
+  } catch (e) {
+    if (e.name === 'AbortError' || e.name === 'TimeoutError') {
+      showToast('タイムアウト（3分超過）。サーバーログを確認してください', 'err');
+    } else {
+      showToast(`エラー: ${e.message}`, 'err');
+    }
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('action-btn-loading');
+    labelEl.textContent = originalLabel;
+  }
 }
 
 // ========== FILTER ==========
@@ -354,23 +432,26 @@ function copyToClipboard(text) {
 }
 
 let toastTimer = null;
-function showToast(msg) {
+function showToast(msg, kind = 'info') {
   let toast = document.getElementById('mt-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'mt-toast';
-    toast.className = 'toast';
     document.body.appendChild(toast);
   }
+  toast.className = `toast toast-${kind} toast-visible`;
   toast.textContent = msg;
-  toast.classList.add('toast-visible');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('toast-visible'), 2800);
+  toastTimer = setTimeout(() => toast.classList.remove('toast-visible'), 4500);
 }
 
 // ========== INIT ==========
 
 (async function init() {
+  // Agent health check (fire-and-forget so dashboard renders even if API is down)
+  checkAgentHealth();
+  setInterval(checkAgentHealth, 30_000);
+
   const d = await loadData();
   if (!d) return;
 
