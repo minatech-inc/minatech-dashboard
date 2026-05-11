@@ -285,6 +285,133 @@ function renderSesTable(d, filter = 'all') {
 
 // ========== AGENT API CALLS ==========
 
+const LEAD_STATUS_LABELS = {
+  candidate: { label: '候補', color: '#6b7589' },
+  drafted: { label: '下書き済', color: '#06b6d4' },
+  approached: { label: '送信済', color: '#3b82f6' },
+  replied: { label: '返信あり', color: '#8b5cf6' },
+  meeting: { label: '商談中', color: '#f59e0b' },
+  won: { label: '成約', color: '#10b981' },
+  lost: { label: '失注', color: '#6b7589' },
+};
+
+async function loadLeads() {
+  try {
+    const res = await fetch(`${AGENT_API}/api/leads`, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) throw new Error('not ok');
+    const data = await res.json();
+    renderLeads(data.leads || []);
+  } catch (e) {
+    document.getElementById('leads-tbody').innerHTML =
+      '<tr><td colspan="8" class="empty">APIサーバーが起動していません。start_server.bat を実行してください</td></tr>';
+  }
+}
+
+function renderLeads(leads) {
+  // KPI集計
+  const counts = { candidate: 0, drafted: 0, approached: 0, replied: 0, meeting: 0, won: 0 };
+  leads.forEach(l => { if (counts[l.status] !== undefined) counts[l.status]++; });
+  Object.entries(counts).forEach(([k, v]) => {
+    const el = document.getElementById(`lead-kpi-${k}`);
+    if (el) el.textContent = v;
+  });
+
+  const tbody = document.getElementById('leads-tbody');
+  if (!leads.length) {
+    tbody.innerHTML = '<tr><td colspan="8" class="empty">リードなし。「新規リード獲得」ボタンから開始してください</td></tr>';
+    return;
+  }
+
+  // 状態優先順位でソート（候補が先、成約・失注は後ろ）
+  const order = ['candidate', 'drafted', 'approached', 'replied', 'meeting', 'won', 'lost'];
+  leads.sort((a, b) => {
+    const oa = order.indexOf(a.status), ob = order.indexOf(b.status);
+    if (oa !== ob) return oa - ob;
+    return (a.hp_score || 0) - (b.hp_score || 0);  // HPスコア低い順=改善余地大
+  });
+
+  tbody.innerHTML = leads.map(l => {
+    const sInfo = LEAD_STATUS_LABELS[l.status] || LEAD_STATUS_LABELS.candidate;
+    const statusOptions = order.map(s =>
+      `<option value="${s}" ${s === l.status ? 'selected' : ''}>${LEAD_STATUS_LABELS[s]?.label || s}</option>`
+    ).join('');
+    return `
+      <tr>
+        <td>
+          <select class="lead-status-select" data-company="${escapeHtml(l.company_name)}" style="color:${sInfo.color}; font-weight:600; background:transparent; border:1px solid ${sInfo.color}33; border-radius:6px; padding:4px 8px; font-size:12px;">
+            ${statusOptions}
+          </select>
+        </td>
+        <td><span class="cell-truncate" title="${escapeHtml(l.company_name)}">${escapeHtml(l.company_name)}</span></td>
+        <td>${escapeHtml(l.industry || '-')}</td>
+        <td>${escapeHtml(l.location || '-')}</td>
+        <td class="num numeric-strong" style="color:${l.hp_score < 50 ? '#ef4444' : l.hp_score < 65 ? '#f59e0b' : '#10b981'}">${l.hp_score ?? '-'}</td>
+        <td><span class="cell-truncate" title="${escapeHtml(l.email || '')}">${l.email ? `<a href="mailto:${escapeHtml(l.email)}">${escapeHtml(l.email)}</a>` : '-'}</span></td>
+        <td>${l.homepage_url ? `<a href="${escapeHtml(l.homepage_url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
+        <td>${l.status === 'drafted' || l.status === 'candidate' ? '下書き確認' : '-'}</td>
+      </tr>`;
+  }).join('');
+
+  // ステータス変更ハンドラ
+  tbody.querySelectorAll('.lead-status-select').forEach(sel => {
+    sel.addEventListener('change', async (e) => {
+      const company = sel.dataset.company;
+      const newStatus = sel.value;
+      try {
+        const res = await fetch(`${AGENT_API}/api/update-lead-status`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ company_name: company, new_status: newStatus }),
+        });
+        const data = await res.json();
+        showToast(data.ok ? `${company} を ${LEAD_STATUS_LABELS[newStatus]?.label}に変更` : `失敗: ${data.message}`, data.ok ? 'ok' : 'err');
+        if (data.ok) loadLeads();
+      } catch (err) {
+        showToast(`エラー: ${err.message}`, 'err');
+      }
+    });
+  });
+}
+
+async function runLeadAcquisition() {
+  if (!AGENT_AVAILABLE) {
+    showToast('APIサーバーが起動していません', 'warn');
+    return;
+  }
+  const industry = document.getElementById('lead-industry').value;
+  const location = document.getElementById('lead-location').value;
+  if (!location.trim()) { showToast('地域を入力してください', 'warn'); return; }
+
+  const btn = document.getElementById('run-lead-acquisition');
+  btn.disabled = true;
+  btn.classList.add('action-btn-loading');
+  const label = btn.querySelector('.btn-label');
+  const original = label.textContent;
+  label.textContent = '実行中…';
+
+  try {
+    const res = await fetch(`${AGENT_API}/api/acquire-leads`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ industry, location, count: 5 }),
+      signal: AbortSignal.timeout(300_000),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      showToast(`${industry}×${location} のリード獲得完了`, 'ok');
+      loadLeads();
+    } else {
+      showToast(`失敗: ${data.error || '不明'}`, 'err');
+    }
+  } catch (e) {
+    showToast(`エラー: ${e.message}`, 'err');
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('action-btn-loading');
+    label.textContent = original;
+  }
+}
+
 async function checkAgentHealth() {
   const dot = document.getElementById('agent-status-dot');
   const label = document.getElementById('agent-status-label');
@@ -451,6 +578,14 @@ function showToast(msg, kind = 'info') {
   // Agent health check (fire-and-forget so dashboard renders even if API is down)
   checkAgentHealth();
   setInterval(checkAgentHealth, 30_000);
+
+  // Lead acquisition trigger button
+  const runBtn = document.getElementById('run-lead-acquisition');
+  if (runBtn) runBtn.addEventListener('click', runLeadAcquisition);
+
+  // Load CRM data
+  loadLeads();
+  setInterval(loadLeads, 60_000);
 
   const d = await loadData();
   if (!d) return;

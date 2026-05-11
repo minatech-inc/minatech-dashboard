@@ -188,6 +188,59 @@
     </div>
   </section>
 
+  <!-- ============ HP LEAD CRM ============ -->
+  <section class="panel">
+    <div class="panel-header panel-header-with-action">
+      <div>
+        <h2 class="panel-title">Web Studio リードパイプライン</h2>
+        <div class="panel-sub">HP制作営業のCRM・status別管理</div>
+      </div>
+      <div class="lead-actions">
+        <select id="lead-industry" class="lead-input">
+          <option value="美容サロン">美容サロン</option>
+          <option value="税理士事務所">税理士事務所</option>
+          <option value="行政書士事務所">行政書士事務所</option>
+          <option value="不動産業者">不動産業者</option>
+          <option value="飲食店">飲食店</option>
+        </select>
+        <input id="lead-location" class="lead-input" placeholder="地域 (例: 藤沢市)" value="藤沢市">
+        <button class="action-btn" id="run-lead-acquisition" title="エージェントを起動">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <span class="btn-label">新規リード獲得</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="lead-kpi-row">
+      <div class="lead-kpi"><div class="lead-kpi-label">候補</div><div class="lead-kpi-value" id="lead-kpi-candidate">—</div></div>
+      <div class="lead-kpi"><div class="lead-kpi-label">下書き済</div><div class="lead-kpi-value" id="lead-kpi-drafted">—</div></div>
+      <div class="lead-kpi"><div class="lead-kpi-label">送信済</div><div class="lead-kpi-value" id="lead-kpi-approached">—</div></div>
+      <div class="lead-kpi"><div class="lead-kpi-label">返信あり</div><div class="lead-kpi-value" id="lead-kpi-replied">—</div></div>
+      <div class="lead-kpi"><div class="lead-kpi-label">商談中</div><div class="lead-kpi-value" id="lead-kpi-meeting">—</div></div>
+      <div class="lead-kpi lead-kpi-win"><div class="lead-kpi-label">成約</div><div class="lead-kpi-value" id="lead-kpi-won">—</div></div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>状態</th>
+            <th>企業名</th>
+            <th>業種</th>
+            <th>所在地</th>
+            <th class="num">HPスコア</th>
+            <th>メール</th>
+            <th>HP</th>
+            <th>アクション</th>
+          </tr>
+        </thead>
+        <tbody id="leads-tbody">
+          <tr><td colspan="8" class="loading">読み込み中…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- ============ TREND ============ -->
   <section class="panel">
     <div class="panel-header">
