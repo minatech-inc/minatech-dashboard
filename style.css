@@ -726,25 +726,25 @@ body {
 @media (max-width: 720px) {
   .container { padding: 16px; gap: 16px; }
 
-  /* Topbar: グリッドで2行構成（上=ブランド+更新ボタン、下=メタ情報） */
+  /* Topbar: PC同様の1行レイアウト（ブランド左・メタ情報＋更新ボタン右） */
   .topbar-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "brand   refresh"
-      "meta    meta";
-    column-gap: 10px;
-    row-gap: 10px;
-    padding: 10px 14px;
-    max-width: 100%;
+    padding: 12px 14px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
   }
   .brand {
-    grid-area: brand;
-    gap: 10px;
+    gap: 8px;
+    flex: 0 1 auto;
     min-width: 0;
     overflow: hidden;
   }
-  .brand-mark { width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0; }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
   .brand-mark::after { inset: 6px; }
   .brand-name {
     font-size: 14px;
@@ -752,58 +752,33 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .brand-sub {
-    font-size: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+  .brand-sub { display: none; } /* サブタイトルは省略 */
 
-  .refresh-btn {
-    grid-area: refresh;
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  /* メタ情報: 2列グリッド・はみ出し防止 */
+  /* メタ情報: ラベル省略・値のみコンパクト表示（PCと同じ横並び） */
   .topbar-meta {
-    grid-area: meta;
-    width: 100%;
-    margin-left: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 12px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border-subtle);
+    margin-left: auto;
+    gap: 10px;
+    flex-shrink: 1;
     min-width: 0;
   }
   .meta-item-source { display: none; } /* "データソース" はモバイルでは非表示（冗長） */
   .meta-item {
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
+    gap: 4px;
     min-width: 0;
-    overflow: hidden;
   }
-  .meta-label {
-    font-size: 9px;
-    flex-shrink: 0;
-  }
+  .meta-label { display: none; } /* ラベル省略で1行に収める */
   .meta-value {
     font-size: 11px;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .agent-status { min-width: 0; overflow: hidden; }
-  .agent-status > span:last-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .agent-status > span:last-child { display: none; } /* "オンライン"等の文字は省略・ドットのみ */
+
+  .refresh-btn {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
   }
 
   /* KPI: 1列・余白圧縮 */
@@ -845,18 +820,106 @@ body {
     font-size: 12px;
   }
 
-  /* テーブル: 詰める + スマホで見やすく */
+  /* テーブル → カードリスト化（大手品質のスマホUI） */
   .table-wrap {
-    margin: 0 -16px -16px;
-    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    overflow-x: visible;
+    overflow-y: visible;
   }
-  .data-table { font-size: 12px; }
-  .data-table thead th {
-    padding: 10px 12px;
-    font-size: 9px;
+  .data-table,
+  .data-table tbody {
+    display: block;
+    width: 100%;
   }
-  .data-table tbody td { padding: 10px 12px; }
-  .cell-truncate { max-width: 180px; }
+  .data-table thead { display: none; }
+  .data-table tbody tr {
+    display: block;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border-strong);
+  }
+  .data-table tbody tr:last-child { margin-bottom: 0; }
+  .data-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    text-align: right;
+    min-height: 28px;
+  }
+  .data-table tbody td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .data-table tbody td:first-child {
+    padding-top: 0;
+    border-bottom: 1px solid var(--border-default);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+  }
+  .data-table tbody td::before {
+    content: attr(data-label);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    flex-shrink: 0;
+    text-align: left;
+  }
+  /* 1列目（優先度バッジ等）はラベル省略してフル幅で目立たせる */
+  .data-table tbody td:first-child::before { display: none; }
+  .data-table tbody td:first-child { justify-content: flex-start; }
+
+  /* カード内ではセルtruncate解除（折返し許可） */
+  .cell-truncate {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    text-align: right;
+    word-break: break-word;
+  }
+  .data-table tbody td .tag-list { justify-content: flex-end; }
+
+  /* 空・ローディング行はカード化を解除 */
+  .data-table tbody tr:has(td.empty),
+  .data-table tbody tr:has(td.loading) {
+    background: transparent;
+    border: 1px dashed var(--border-default);
+    padding: 24px 16px;
+  }
+  .data-table tbody tr:has(td.empty) td,
+  .data-table tbody tr:has(td.loading) td {
+    display: block;
+    text-align: center;
+    border: none;
+    padding: 0;
+  }
+  .data-table tbody tr:has(td.empty) td::before,
+  .data-table tbody tr:has(td.loading) td::before { display: none; }
+
+  /* SES提案書ボタンをカード内でフル幅に */
+  .action-cell {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .action-cell .action-btn {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+  .action-cell .action-btn .btn-label { display: inline; }
 
   /* チャート: 高さ控えめ */
   .chart-container { height: 240px; }
@@ -873,24 +936,29 @@ body {
 
 @media (max-width: 480px) {
   .container { padding: 12px; gap: 12px; }
-  .brand-sub { display: none; }
-  .topbar-meta { gap: 6px 10px; }
+
+  .topbar-inner { padding: 10px 12px; gap: 6px; }
+  .topbar-meta { gap: 8px; }
+  .brand-name { font-size: 13px; }
 
   .kpi-card { padding: 14px 16px; }
   .kpi-value { font-size: 24px; }
 
   .lead-kpi-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px 6px;
   }
-  .lead-kpi-value { font-size: 17px; }
+  .lead-kpi-value { font-size: 16px; }
+  .lead-kpi-label { font-size: 9px; }
 
   .panel { padding: 14px; }
   .panel-title { font-size: 13px; }
   .filter-tab { padding: 5px 10px; font-size: 11px; }
 
-  .data-table { font-size: 11px; }
-  .data-table thead th { padding: 8px 10px; }
-  .data-table tbody td { padding: 8px 10px; }
+  /* カード表示の小型化 */
+  .data-table { font-size: 12px; }
+  .data-table tbody tr { padding: 12px 14px; }
+  .data-table tbody td { padding: 6px 0; }
 
   .chart-container { height: 220px; }
   .chart-tall { height: 240px; }

@@ -229,15 +229,15 @@ function renderRealestateTable(d, filter = 'all') {
 
   tbody.innerHTML = items.map(it => `
     <tr>
-      <td><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
-      <td><span class="cell-truncate" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span></td>
-      <td><span class="cell-truncate" title="${escapeHtml(it.location)}">${escapeHtml(it.location)}</span></td>
-      <td class="num numeric-strong">${it.price}万</td>
-      <td class="num numeric-strong">${it.yield_surface}%</td>
-      <td class="num">${it.age || '-'}</td>
-      <td class="num">${it.station_min ? it.station_min + '分' : '-'}</td>
-      <td><span class="cell-truncate" title="${escapeHtml(it.reason)}">${escapeHtml(it.reason)}</span></td>
-      <td>${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
+      <td data-label="優先度"><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
+      <td data-label="物件名"><span class="cell-truncate" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span></td>
+      <td data-label="所在地"><span class="cell-truncate" title="${escapeHtml(it.location)}">${escapeHtml(it.location)}</span></td>
+      <td data-label="価格" class="num numeric-strong">${it.price}万</td>
+      <td data-label="利回り" class="num numeric-strong">${it.yield_surface}%</td>
+      <td data-label="築年" class="num">${it.age || '-'}</td>
+      <td data-label="駅徒歩" class="num">${it.station_min ? it.station_min + '分' : '-'}</td>
+      <td data-label="判断根拠"><span class="cell-truncate" title="${escapeHtml(it.reason)}">${escapeHtml(it.reason)}</span></td>
+      <td data-label="リンク">${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
     </tr>
   `).join('');
 }
@@ -258,14 +258,14 @@ function renderSesTable(d, filter = 'all') {
     const projKey = (it.name || '').slice(0, 20).split(/[【】\s]/).filter(Boolean)[0] || '案件';
     return `
     <tr>
-      <td><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
-      <td><span class="cell-truncate" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span></td>
-      <td class="num numeric-strong">${it.unit_price}万</td>
-      <td class="num numeric-strong">${it.margin_monthly}万</td>
-      <td>${escapeHtml(it.work_style || '-')}</td>
-      <td>${escapeHtml(it.location || '-')}</td>
-      <td>${renderSkillTags(it.skills)}</td>
-      <td class="action-cell">
+      <td data-label="優先度"><span class="priority-badge priority-${priorityKey(it.priority)}">${priorityKey(it.priority)}</span></td>
+      <td data-label="案件名"><span class="cell-truncate" title="${escapeHtml(it.name)}">${escapeHtml(it.name)}</span></td>
+      <td data-label="月単価" class="num numeric-strong">${it.unit_price}万</td>
+      <td data-label="月粗利" class="num numeric-strong">${it.margin_monthly}万</td>
+      <td data-label="稼働形態">${escapeHtml(it.work_style || '-')}</td>
+      <td data-label="勤務地">${escapeHtml(it.location || '-')}</td>
+      <td data-label="必須スキル">${renderSkillTags(it.skills)}</td>
+      <td data-label="アクション" class="action-cell">
         ${it.url ? `<a href="${escapeHtml(it.url)}" target="_blank" rel="noopener">案件 →</a>` : '-'}
         <button class="action-btn" data-project="${escapeHtml(projKey)}" data-name="${escapeHtml(it.name)}" title="提案書をAIエージェントが生成">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -337,18 +337,18 @@ function renderLeads(leads) {
     ).join('');
     return `
       <tr>
-        <td>
+        <td data-label="状態">
           <select class="lead-status-select" data-company="${escapeHtml(l.company_name)}" style="color:${sInfo.color}; font-weight:600; background:transparent; border:1px solid ${sInfo.color}33; border-radius:6px; padding:4px 8px; font-size:12px;">
             ${statusOptions}
           </select>
         </td>
-        <td><span class="cell-truncate" title="${escapeHtml(l.company_name)}">${escapeHtml(l.company_name)}</span></td>
-        <td>${escapeHtml(l.industry || '-')}</td>
-        <td>${escapeHtml(l.location || '-')}</td>
-        <td class="num numeric-strong" style="color:${l.hp_score < 50 ? '#ef4444' : l.hp_score < 65 ? '#f59e0b' : '#10b981'}">${l.hp_score ?? '-'}</td>
-        <td><span class="cell-truncate" title="${escapeHtml(l.email || '')}">${l.email ? `<a href="mailto:${escapeHtml(l.email)}">${escapeHtml(l.email)}</a>` : '-'}</span></td>
-        <td>${l.homepage_url ? `<a href="${escapeHtml(l.homepage_url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
-        <td>${l.status === 'drafted' || l.status === 'candidate' ? '下書き確認' : '-'}</td>
+        <td data-label="企業名"><span class="cell-truncate" title="${escapeHtml(l.company_name)}">${escapeHtml(l.company_name)}</span></td>
+        <td data-label="業種">${escapeHtml(l.industry || '-')}</td>
+        <td data-label="所在地">${escapeHtml(l.location || '-')}</td>
+        <td data-label="HPスコア" class="num numeric-strong" style="color:${l.hp_score < 50 ? '#ef4444' : l.hp_score < 65 ? '#f59e0b' : '#10b981'}">${l.hp_score ?? '-'}</td>
+        <td data-label="メール"><span class="cell-truncate" title="${escapeHtml(l.email || '')}">${l.email ? `<a href="mailto:${escapeHtml(l.email)}">${escapeHtml(l.email)}</a>` : '-'}</span></td>
+        <td data-label="HP">${l.homepage_url ? `<a href="${escapeHtml(l.homepage_url)}" target="_blank" rel="noopener">開く →</a>` : '-'}</td>
+        <td data-label="アクション">${l.status === 'drafted' || l.status === 'candidate' ? '下書き確認' : '-'}</td>
       </tr>`;
   }).join('');
 
