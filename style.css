@@ -38,7 +38,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
@@ -51,6 +51,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -119,6 +120,7 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-left: auto;
 }
 
 .meta-item {
@@ -724,36 +726,85 @@ body {
 @media (max-width: 720px) {
   .container { padding: 16px; gap: 16px; }
 
-  /* Topbar: ブランドと更新ボタンを上段、メタ情報を下段に */
+  /* Topbar: グリッドで2行構成（上=ブランド+更新ボタン、下=メタ情報） */
   .topbar-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand   refresh"
+      "meta    meta";
+    column-gap: 10px;
+    row-gap: 10px;
     padding: 10px 14px;
-    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .brand {
+    grid-area: brand;
     gap: 10px;
-    row-gap: 8px;
+    min-width: 0;
+    overflow: hidden;
   }
-  .brand { gap: 10px; flex: 1 1 auto; min-width: 0; }
-  .brand-mark { width: 30px; height: 30px; border-radius: 7px; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 7px; flex-shrink: 0; }
   .brand-mark::after { inset: 6px; }
-  .brand-name { font-size: 14px; }
-  .brand-sub { font-size: 10px; }
-
-  .topbar-meta {
-    width: 100%;
-    order: 3;
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-top: 8px;
-    border-top: 1px solid var(--border-subtle);
+  .brand-name {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
+  .brand-sub {
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .refresh-btn {
+    grid-area: refresh;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* メタ情報: 2列グリッド・はみ出し防止 */
+  .topbar-meta {
+    grid-area: meta;
+    width: 100%;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-subtle);
+    min-width: 0;
+  }
+  .meta-item-source { display: none; } /* "データソース" はモバイルでは非表示（冗長） */
   .meta-item {
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: 6px;
+    min-width: 0;
+    overflow: hidden;
   }
-  .meta-label { font-size: 9px; }
-  .meta-value { font-size: 11px; }
-  .refresh-btn { width: 32px; height: 32px; flex-shrink: 0; }
+  .meta-label {
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+  .meta-value {
+    font-size: 11px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .agent-status { min-width: 0; overflow: hidden; }
+  .agent-status > span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   /* KPI: 1列・余白圧縮 */
   .kpi-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -823,8 +874,7 @@ body {
 @media (max-width: 480px) {
   .container { padding: 12px; gap: 12px; }
   .brand-sub { display: none; }
-  .topbar-meta { gap: 10px; }
-  .meta-item:nth-child(2) { display: none; } /* "データソース" は冗長なので非表示 */
+  .topbar-meta { gap: 6px 10px; }
 
   .kpi-card { padding: 14px 16px; }
   .kpi-value { font-size: 24px; }
