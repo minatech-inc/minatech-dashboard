@@ -1098,3 +1098,209 @@ body {
   .help-popover-header { padding: 14px 18px; }
   .help-popover-body { padding: 18px; font-size: 12.5px; }
 }
+
+/* ============================================
+   Lead Inquiry KPI Section
+   問い合わせ KPI（賃貸 / 売買 / 採用）
+   ============================================ */
+.lead-section {
+  margin-top: 24px;
+}
+
+.lead-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+.lead-section-title h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.lead-section-title .sub {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.lead-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lead-card {
+  background: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-default);
+  border-radius: 12px;
+  padding: 22px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.lead-card:hover {
+  border-color: var(--border-strong);
+}
+.lead-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--lead-accent, var(--accent-blue));
+  opacity: 0.7;
+}
+
+.lead-card[data-type="oheya"]   { --lead-accent: #06b6d4; }
+.lead-card[data-type="baibai"]  { --lead-accent: #3b82f6; }
+.lead-card[data-type="recruit"] { --lead-accent: #8b5cf6; }
+
+.lead-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.lead-card-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.lead-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-default);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lead-accent, var(--accent-blue));
+  flex-shrink: 0;
+}
+.lead-card-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lead-card-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.lead-card-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 6px 0 12px;
+}
+.lead-card-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--mono);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lead-card-unit {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.lead-diff {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.lead-diff.up   { background: rgba(16, 185, 129, 0.12); color: #34d399; }
+.lead-diff.down { background: rgba(239, 68, 68, 0.12);  color: #fb7185; }
+.lead-diff.flat { background: rgba(168, 178, 197, 0.10); color: var(--text-tertiary); }
+.lead-diff svg {
+  width: 11px;
+  height: 11px;
+}
+
+.lead-card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+.lead-card-foot .num {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-family: var(--mono);
+}
+
+/* 流入経路パネル */
+.lead-detail-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.route-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+.route-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.route-name { color: var(--text-secondary); }
+.route-bar-wrap {
+  position: relative;
+  height: 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.route-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+  border-radius: 4px;
+}
+.route-count {
+  text-align: right;
+  font-family: var(--mono);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.route-empty {
+  color: var(--text-tertiary);
+  font-size: 13px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .lead-kpi-grid { grid-template-columns: 1fr; }
+  .lead-detail-row { grid-template-columns: 1fr; }
+}

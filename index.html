@@ -97,6 +97,104 @@
     </div>
   </section>
 
+  <!-- ============ LEAD INQUIRY KPI ============ -->
+  <section class="lead-section">
+    <div class="lead-section-title">
+      <h2>問い合わせパイプライン</h2>
+      <span class="sub">各フォーム経由の応答状況・今月実績と前月比較</span>
+    </div>
+
+    <div class="lead-kpi-grid">
+      <!-- 賃貸 -->
+      <div class="lead-card" data-type="oheya">
+        <div class="lead-card-head">
+          <div>
+            <div class="lead-card-label">Rental</div>
+            <div class="lead-card-name">賃貸ヒアリング</div>
+          </div>
+          <div class="lead-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M10 21V13h4v8"/></svg>
+          </div>
+        </div>
+        <div class="lead-card-main">
+          <span class="lead-card-value" id="lead-oheya-month">—</span>
+          <span class="lead-card-unit">件 / 今月</span>
+          <span class="lead-diff flat" id="lead-oheya-diff">—</span>
+        </div>
+        <div class="lead-card-foot">
+          <span>累計</span>
+          <span class="num" id="lead-oheya-total">—</span>
+        </div>
+      </div>
+
+      <!-- 売買 -->
+      <div class="lead-card" data-type="baibai">
+        <div class="lead-card-head">
+          <div>
+            <div class="lead-card-label">Sales</div>
+            <div class="lead-card-name">売買購入相談</div>
+          </div>
+          <div class="lead-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 11h.01"/><path d="M15 11h.01"/></svg>
+          </div>
+        </div>
+        <div class="lead-card-main">
+          <span class="lead-card-value" id="lead-baibai-month">—</span>
+          <span class="lead-card-unit">件 / 今月</span>
+          <span class="lead-diff flat" id="lead-baibai-diff">—</span>
+        </div>
+        <div class="lead-card-foot">
+          <span>累計</span>
+          <span class="num" id="lead-baibai-total">—</span>
+        </div>
+      </div>
+
+      <!-- 採用 -->
+      <div class="lead-card" data-type="recruit">
+        <div class="lead-card-head">
+          <div>
+            <div class="lead-card-label">Recruit</div>
+            <div class="lead-card-name">採用応募</div>
+          </div>
+          <div class="lead-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+        </div>
+        <div class="lead-card-main">
+          <span class="lead-card-value" id="lead-recruit-month">—</span>
+          <span class="lead-card-unit">件 / 今月</span>
+          <span class="lead-diff flat" id="lead-recruit-diff">—</span>
+        </div>
+        <div class="lead-card-foot">
+          <span>累計</span>
+          <span class="num" id="lead-recruit-total">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lead-detail-row">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">直近30日 問い合わせ推移</h2>
+          <div class="panel-sub">賃貸・売買・採用 別の日次件数</div>
+        </div>
+        <div class="chart-container">
+          <canvas id="chart-lead-trend"></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">流入経路（累計）</h2>
+          <div class="panel-sub">どこから問い合わせが来たか</div>
+        </div>
+        <div class="route-list" id="route-list">
+          <div class="route-empty">読み込み中…</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CHART ROW ============ -->
   <section class="chart-row">
     <div class="panel">

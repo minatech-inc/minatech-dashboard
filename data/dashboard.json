@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T09:00:51",
+  "generated_at": "2026-06-29T17:11:31",
   "data_date": "2026-06-29",
   "realestate": {
     "items": [
@@ -830,5 +830,163 @@
       "realestate_count": 6,
       "ses_count": 40
     }
-  ]
+  ],
+  "form_stats": {
+    "oheya": {
+      "label": "賃貸ヒアリング",
+      "stats": {
+        "total": 1,
+        "this_month": 1,
+        "prev_month": 0,
+        "diff": 1,
+        "last_30days": [
+          {
+            "date": "2026-05-31",
+            "count": 0
+          },
+          {
+            "date": "2026-06-01",
+            "count": 0
+          },
+          {
+            "date": "2026-06-02",
+            "count": 0
+          },
+          {
+            "date": "2026-06-03",
+            "count": 0
+          },
+          {
+            "date": "2026-06-04",
+            "count": 0
+          },
+          {
+            "date": "2026-06-05",
+            "count": 0
+          },
+          {
+            "date": "2026-06-06",
+            "count": 0
+          },
+          {
+            "date": "2026-06-07",
+            "count": 0
+          },
+          {
+            "date": "2026-06-08",
+            "count": 0
+          },
+          {
+            "date": "2026-06-09",
+            "count": 0
+          },
+          {
+            "date": "2026-06-10",
+            "count": 0
+          },
+          {
+            "date": "2026-06-11",
+            "count": 0
+          },
+          {
+            "date": "2026-06-12",
+            "count": 0
+          },
+          {
+            "date": "2026-06-13",
+            "count": 0
+          },
+          {
+            "date": "2026-06-14",
+            "count": 0
+          },
+          {
+            "date": "2026-06-15",
+            "count": 0
+          },
+          {
+            "date": "2026-06-16",
+            "count": 0
+          },
+          {
+            "date": "2026-06-17",
+            "count": 0
+          },
+          {
+            "date": "2026-06-18",
+            "count": 0
+          },
+          {
+            "date": "2026-06-19",
+            "count": 0
+          },
+          {
+            "date": "2026-06-20",
+            "count": 0
+          },
+          {
+            "date": "2026-06-21",
+            "count": 0
+          },
+          {
+            "date": "2026-06-22",
+            "count": 0
+          },
+          {
+            "date": "2026-06-23",
+            "count": 0
+          },
+          {
+            "date": "2026-06-24",
+            "count": 0
+          },
+          {
+            "date": "2026-06-25",
+            "count": 0
+          },
+          {
+            "date": "2026-06-26",
+            "count": 0
+          },
+          {
+            "date": "2026-06-27",
+            "count": 0
+          },
+          {
+            "date": "2026-06-28",
+            "count": 1
+          },
+          {
+            "date": "2026-06-29",
+            "count": 0
+          }
+        ],
+        "by_route": {
+          "紹介": 1
+        }
+      }
+    },
+    "baibai": {
+      "label": "売買購入相談",
+      "stats": {
+        "total": 0,
+        "this_month": 0,
+        "prev_month": 0,
+        "diff": 0,
+        "last_30days": [],
+        "by_route": {}
+      }
+    },
+    "recruit": {
+      "label": "採用応募",
+      "stats": {
+        "total": 0,
+        "this_month": 0,
+        "prev_month": 0,
+        "diff": 0,
+        "last_30days": [],
+        "by_route": {}
+      }
+    }
+  }
 }

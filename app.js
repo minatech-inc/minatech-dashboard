@@ -591,6 +591,9 @@ function showToast(msg, kind = 'info') {
   if (!d) return;
 
   renderKPIs(d);
+  renderLeads(d);
+  renderLeadTrend(d);
+  renderLeadRoutes(d);
   renderRealestateScatter(d);
   renderSesBars(d);
   renderTrend(d);
@@ -598,3 +601,134 @@ function showToast(msg, kind = 'info') {
   renderSesTable(d, 'all');
   bindFilters();
 })();
+
+// ========== Lead Inquiry KPI ==========
+
+const LEAD_TYPES = [
+  { key: 'oheya',   color: '#06b6d4' },
+  { key: 'baibai',  color: '#3b82f6' },
+  { key: 'recruit', color: '#8b5cf6' },
+];
+
+function renderLeads(d) {
+  const fs = (d && d.form_stats) || {};
+  LEAD_TYPES.forEach(({ key }) => {
+    const stats = (fs[key] && fs[key].stats) || { total: 0, this_month: 0, prev_month: 0, diff: 0 };
+    const monthEl = document.getElementById(`lead-${key}-month`);
+    const totalEl = document.getElementById(`lead-${key}-total`);
+    const diffEl  = document.getElementById(`lead-${key}-diff`);
+    if (monthEl) monthEl.textContent = stats.this_month;
+    if (totalEl) totalEl.textContent = stats.total;
+    if (diffEl) {
+      const diff = stats.diff || 0;
+      diffEl.classList.remove('up','down','flat');
+      let icon, label;
+      if (diff > 0) {
+        diffEl.classList.add('up');
+        icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg>';
+        label = `+${diff} 前月比`;
+      } else if (diff < 0) {
+        diffEl.classList.add('down');
+        icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+        label = `${diff} 前月比`;
+      } else {
+        diffEl.classList.add('flat');
+        icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>';
+        label = '±0 前月比';
+      }
+      diffEl.innerHTML = icon + label;
+    }
+  });
+}
+
+function renderLeadTrend(d) {
+  const ctx = document.getElementById('chart-lead-trend');
+  if (!ctx) return;
+  const fs = (d && d.form_stats) || {};
+
+  const referenceKey = LEAD_TYPES.find(t => (fs[t.key] && fs[t.key].stats && fs[t.key].stats.last_30days || []).length > 0)?.key;
+  const labels = referenceKey
+    ? fs[referenceKey].stats.last_30days.map(p => p.date.slice(5))
+    : [];
+
+  const datasets = LEAD_TYPES.map(t => {
+    const series = (fs[t.key] && fs[t.key].stats && fs[t.key].stats.last_30days) || [];
+    const data = series.map(p => p.count);
+    const label = (fs[t.key] && fs[t.key].label) || t.key;
+    return {
+      label,
+      data,
+      borderColor: t.color,
+      backgroundColor: t.color + '22',
+      borderWidth: 2,
+      pointRadius: 0,
+      pointHoverRadius: 5,
+      tension: 0.35,
+      fill: true,
+    };
+  });
+
+  new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 8, boxHeight: 8, padding: 12, color: '#a8b2c5' } },
+        tooltip: {
+          backgroundColor: 'rgba(10, 14, 26, 0.95)',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          titleColor: '#f5f7fa',
+          bodyColor: '#a8b2c5',
+        },
+      },
+      scales: {
+        x: {
+          ticks: { color: '#6b7589', maxTicksLimit: 8, font: { size: 10 } },
+          grid: { color: 'rgba(255,255,255,0.04)' },
+        },
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#6b7589', precision: 0, font: { size: 11 } },
+          grid: { color: 'rgba(255,255,255,0.04)' },
+        },
+      },
+    },
+  });
+}
+
+function renderLeadRoutes(d) {
+  const el = document.getElementById('route-list');
+  if (!el) return;
+  const fs = (d && d.form_stats) || {};
+
+  // 全フォームの by_route を合算
+  const combined = {};
+  LEAD_TYPES.forEach(t => {
+    const routes = (fs[t.key] && fs[t.key].stats && fs[t.key].stats.by_route) || {};
+    Object.entries(routes).forEach(([k, v]) => {
+      combined[k] = (combined[k] || 0) + v;
+    });
+  });
+
+  const entries = Object.entries(combined).sort((a, b) => b[1] - a[1]);
+  if (entries.length === 0) {
+    el.innerHTML = '<div class="route-empty">まだデータがありません</div>';
+    return;
+  }
+  const max = entries[0][1];
+  el.innerHTML = entries.map(([name, count]) => {
+    const pct = max > 0 ? (count / max) * 100 : 0;
+    const safeName = String(name).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+    return `
+      <div class="route-row">
+        <span class="route-name">${safeName}</span>
+        <span class="route-bar-wrap"><span class="route-bar" style="width:${pct}%"></span></span>
+        <span class="route-count">${count}</span>
+      </div>
+    `;
+  }).join('');
+}
