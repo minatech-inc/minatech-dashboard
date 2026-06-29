@@ -594,6 +594,10 @@ function showToast(msg, kind = 'info') {
   renderLeads(d);
   renderLeadTrend(d);
   renderLeadRoutes(d);
+  renderFunnel(d, 'oheya', 'funnel-oheya');
+  renderFunnel(d, 'baibai', 'funnel-baibai');
+  renderRevenue(d);
+  renderAssignee(d);
   renderRealestateScatter(d);
   renderSesBars(d);
   renderTrend(d);
@@ -729,6 +733,100 @@ function renderLeadRoutes(d) {
         <span class="route-bar-wrap"><span class="route-bar" style="width:${pct}%"></span></span>
         <span class="route-count">${count}</span>
       </div>
+    `;
+  }).join('');
+}
+
+// ========== Phase 2: Funnel ==========
+
+// 賃貸と売買で表示順序が異なる
+const FUNNEL_ORDER = {
+  oheya:  ['問合せ','ヒアリング済','内見調整中','内見済','申込','契約','見送り'],
+  baibai: ['lead','商談中','内見済','契約準備','成約','失注'],
+};
+
+function renderFunnel(d, key, elementId) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+  const fs = (d && d.form_stats) || {};
+  const byStatus = (fs[key] && fs[key].stats && fs[key].stats.by_status) || {};
+  const order = FUNNEL_ORDER[key] || Object.keys(byStatus);
+
+  // 並び順に沿って件数を取得
+  const data = order.map(s => ({ label: s, count: byStatus[s] || 0 }));
+  // データが全て0かどうか
+  const total = data.reduce((sum, x) => sum + x.count, 0);
+  if (total === 0) {
+    el.innerHTML = '<div class="route-empty">まだステータス入力されたデータがありません</div>';
+    return;
+  }
+  const max = Math.max(...data.map(x => x.count));
+  el.innerHTML = data.map(({ label, count }) => {
+    const pct = max > 0 ? (count / max) * 100 : 0;
+    const muted = ['見送り','失注'].includes(label) ? 'muted' : '';
+    const safeLabel = String(label).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+    return `
+      <div class="funnel-step ${muted}">
+        <span class="step-label">${safeLabel}</span>
+        <span class="step-bar-wrap"><span class="step-bar" style="width:${pct}%"></span></span>
+        <span class="step-count">${count}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+// ========== Phase 2: Revenue ==========
+
+function renderRevenue(d) {
+  const fs = (d && d.form_stats) || {};
+  const oheyaStats = (fs.oheya && fs.oheya.stats) || {};
+  const baibaiStats = (fs.baibai && fs.baibai.stats) || {};
+
+  const setText = (id, val) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const unit = el.querySelector('.revenue-cell-unit');
+    const unitText = unit ? unit.outerHTML : '';
+    el.innerHTML = `${val}${unitText}`;
+  };
+
+  setText('rev-oheya',  (oheyaStats.month_revenue || 0).toLocaleString('ja-JP'));
+  setText('rev-baibai', (baibaiStats.month_revenue || 0).toLocaleString('ja-JP'));
+  setText('deal-oheya', (oheyaStats.month_deal_count || 0));
+  setText('deal-baibai',(baibaiStats.month_deal_count || 0));
+}
+
+// ========== Phase 2: Assignee ==========
+
+function renderAssignee(d) {
+  const tbody = document.getElementById('assignee-tbody');
+  if (!tbody) return;
+  const fs = (d && d.form_stats) || {};
+  // oheya + baibai の by_assignee を合算
+  const combined = {};
+  ['oheya','baibai'].forEach(key => {
+    const ba = (fs[key] && fs[key].stats && fs[key].stats.by_assignee) || {};
+    Object.entries(ba).forEach(([name, v]) => {
+      if (!combined[name]) combined[name] = { lead_count: 0, deal_count: 0, revenue: 0 };
+      combined[name].lead_count += v.lead_count || 0;
+      combined[name].deal_count += v.deal_count || 0;
+      combined[name].revenue    += v.revenue || 0;
+    });
+  });
+  const rows = Object.entries(combined).sort((a, b) => b[1].revenue - a[1].revenue);
+  if (rows.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="4" class="assignee-empty">担当者列が入力されたら表示されます</td></tr>';
+    return;
+  }
+  tbody.innerHTML = rows.map(([name, v]) => {
+    const safeName = String(name).replace(/[<>&"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));
+    return `
+      <tr>
+        <td><span class="assignee-name">${safeName}</span></td>
+        <td class="num">${v.lead_count}</td>
+        <td class="num">${v.deal_count}</td>
+        <td class="num">${v.revenue.toLocaleString('ja-JP')}</td>
+      </tr>
     `;
   }).join('');
 }

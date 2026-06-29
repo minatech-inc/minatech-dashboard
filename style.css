@@ -1304,3 +1304,137 @@ body {
   .lead-kpi-grid { grid-template-columns: 1fr; }
   .lead-detail-row { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   Phase 2: Funnel / Revenue / Assignee
+   ============================================ */
+
+.funnel-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* ステータスファネル */
+.funnel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+.funnel-step {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+}
+.funnel-step .step-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.funnel-step .step-bar-wrap {
+  position: relative;
+  height: 28px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.funnel-step .step-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+.funnel-step .step-count {
+  text-align: right;
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+.funnel-step.muted .step-bar {
+  background: linear-gradient(90deg, #4a5266, #6b7589);
+}
+
+/* 売上カード(月次サマリー) */
+.revenue-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+.revenue-cell {
+  padding: 14px 16px;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+.revenue-cell-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.revenue-cell-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--mono);
+  letter-spacing: -0.02em;
+}
+.revenue-cell-unit {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-left: 4px;
+}
+
+/* 担当者別テーブル */
+.assignee-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 6px;
+  font-size: 13px;
+}
+.assignee-table th,
+.assignee-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.assignee-table th {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.assignee-table td.num,
+.assignee-table th.num {
+  text-align: right;
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.assignee-table tr:last-child td { border-bottom: none; }
+.assignee-table .assignee-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.assignee-empty {
+  text-align: center;
+  padding: 24px 0;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .funnel-row { grid-template-columns: 1fr; }
+  .funnel-step { grid-template-columns: 100px 1fr 50px; }
+  .revenue-summary { grid-template-columns: 1fr; }
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T17:11:31",
+  "generated_at": "2026-06-30T05:50:01",
   "data_date": "2026-06-29",
   "realestate": {
     "items": [
@@ -761,11 +761,6 @@
   },
   "trend": [
     {
-      "date": "2026-06-16",
-      "realestate_count": 1,
-      "ses_count": 33
-    },
-    {
       "date": "2026-06-17",
       "realestate_count": 0,
       "ses_count": 0
@@ -829,6 +824,11 @@
       "date": "2026-06-29",
       "realestate_count": 6,
       "ses_count": 40
+    },
+    {
+      "date": "2026-06-30",
+      "realestate_count": 0,
+      "ses_count": 0
     }
   ],
   "form_stats": {
@@ -840,10 +840,6 @@
         "prev_month": 0,
         "diff": 1,
         "last_30days": [
-          {
-            "date": "2026-05-31",
-            "count": 0
-          },
           {
             "date": "2026-06-01",
             "count": 0
@@ -959,11 +955,21 @@
           {
             "date": "2026-06-29",
             "count": 0
+          },
+          {
+            "date": "2026-06-30",
+            "count": 0
           }
         ],
         "by_route": {
           "紹介": 1
-        }
+        },
+        "by_status": {
+          "問合せ": 1
+        },
+        "by_assignee": {},
+        "month_revenue": 0,
+        "month_deal_count": 0
       }
     },
     "baibai": {
@@ -974,7 +980,11 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [],
-        "by_route": {}
+        "by_route": {},
+        "by_status": {},
+        "by_assignee": {},
+        "month_revenue": 0,
+        "month_deal_count": 0
       }
     },
     "recruit": {
@@ -985,7 +995,11 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [],
-        "by_route": {}
+        "by_route": {},
+        "by_status": {},
+        "by_assignee": {},
+        "month_revenue": 0,
+        "month_deal_count": 0
       }
     }
   }
