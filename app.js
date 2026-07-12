@@ -612,6 +612,7 @@ const LEAD_TYPES = [
   { key: 'oheya',   color: '#06b6d4' },
   { key: 'baibai',  color: '#3b82f6' },
   { key: 'recruit', color: '#8b5cf6' },
+  { key: 'sell',    color: '#10b981' },
 ];
 
 function renderLeads(d) {

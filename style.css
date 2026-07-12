@@ -1127,9 +1127,12 @@ body {
 
 .lead-kpi-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 16px;
+}
+@media (max-width: 1180px) {
+  .lead-kpi-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .lead-card {
@@ -1160,6 +1163,7 @@ body {
 .lead-card[data-type="oheya"]   { --lead-accent: #06b6d4; }
 .lead-card[data-type="baibai"]  { --lead-accent: #3b82f6; }
 .lead-card[data-type="recruit"] { --lead-accent: #8b5cf6; }
+.lead-card[data-type="sell"]    { --lead-accent: #10b981; }
 
 .lead-card-head {
   display: flex;
