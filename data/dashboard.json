@@ -1,28 +1,82 @@
 {
-  "generated_at": "2026-07-12T19:20:46",
-  "data_date": "2026-07-12",
+  "generated_at": "2026-07-13T09:00:48",
+  "data_date": "2026-07-13",
   "realestate": {
     "items": [
       {
         "name": "",
-        "location": "熊本県熊本市中央区坪井１−８−１７",
-        "price": 300,
-        "yield_surface": 12.8,
-        "yield_real": 9.6,
+        "location": "静岡県浜松市中央区元浜町２０５",
+        "price": 250,
+        "yield_surface": 17.76,
+        "yield_real": 13.3,
         "age": 36,
-        "station_min": 7,
-        "area": 25.62,
+        "station_min": 4,
+        "area": 16.82,
         "structure": "RC",
+        "risk": "中低",
+        "area_eval": "準主力(静岡)",
+        "reason": "準主力エリア / 利回り17.76% / 駅4分 / 250万",
+        "priority": "A(今週)",
+        "score": 6,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/tokai/shizuoka/dim2001/3681634/show.html"
+      },
+      {
+        "name": "",
+        "location": "福岡県福岡市東区香椎駅前１−３−１５",
+        "price": 298,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 39,
+        "station_min": 3,
+        "area": 18.52,
+        "structure": "SRC",
+        "risk": "中低",
+        "area_eval": "主力(福岡)",
+        "reason": "主力エリア / 駅3分 / 298万",
+        "priority": "A(今週)",
+        "score": 5,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/kyushu/fukuoka/dim2001/3681635/show.html"
+      },
+      {
+        "name": "",
+        "location": "鹿児島県阿久根市赤瀬川237",
+        "price": 16,
+        "yield_surface": 70.0,
+        "yield_real": 52.5,
+        "age": null,
+        "station_min": 11,
+        "area": 127.98,
+        "structure": "",
         "risk": "中",
-        "area_eval": "条件付き(熊本)",
-        "reason": "利回り12.8% / 駅7分 / 300万",
+        "area_eval": "条件付き(鹿児島)",
+        "reason": "利回り70.0% / 16万",
         "priority": "B(今月)",
         "score": 3,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kyushu/kumamoto/dim2001/3681108/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kyushu/kagoshima/dim3001/3681644/show.html"
+      },
+      {
+        "name": "",
+        "location": "群馬県利根郡みなかみ町湯原７５７−１",
+        "price": 350,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 35,
+        "station_min": 17,
+        "area": 47.67,
+        "structure": "SRC",
+        "risk": "中",
+        "area_eval": "準主力(群馬)",
+        "reason": "準主力エリア / 350万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/gunma/dim2001/3681637/show.html"
       }
     ],
-    "total_collected": 1
+    "total_collected": 4
   },
   "ses": {
     "items": [
@@ -108,8 +162,8 @@
       },
       {
         "name": "",
-        "unit_price": 104,
-        "skills": "AWS, Azure, GCP, Terraform, クラウド",
+        "unit_price": 160,
+        "skills": "AWS, Terraform",
         "work_style": "一部リモート",
         "location": "東京都",
         "duration": "",
@@ -118,9 +172,9 @@
         "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "A(今週提案)",
         "score": 5,
-        "margin_monthly": 26.0,
-        "margin_yearly": 312.0,
-        "reason": "単価104万(高) / クラウド案件 / 一部リモート"
+        "margin_monthly": 40.0,
+        "margin_yearly": 480.0,
+        "reason": "単価160万(高) / クラウド案件 / 一部リモート"
       },
       {
         "name": "",
@@ -156,19 +210,19 @@
       },
       {
         "name": "",
-        "unit_price": 160,
-        "skills": "AWS, Terraform",
-        "work_style": "一部リモート",
+        "unit_price": 88,
+        "skills": "AWS, セキュリティ, Terraform",
+        "work_style": "フルリモート",
         "location": "東京都",
         "duration": "",
         "site": "フリーランスHub",
         "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "A(今週提案)",
         "score": 5,
-        "margin_monthly": 40.0,
-        "margin_yearly": 480.0,
-        "reason": "単価160万(高) / クラウド案件 / 一部リモート"
+        "margin_monthly": 22.0,
+        "margin_yearly": 264.0,
+        "reason": "単価88万 / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -188,19 +242,19 @@
       },
       {
         "name": "",
-        "unit_price": 88,
-        "skills": "AWS, セキュリティ, Terraform",
-        "work_style": "フルリモート",
-        "location": "東京都",
+        "unit_price": 96,
+        "skills": "AWS, Azure, ネットワーク, クラウド",
+        "work_style": "一部リモート",
+        "location": "愛知県",
         "duration": "",
         "site": "フリーランスHub",
         "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "A(今週提案)",
         "score": 5,
-        "margin_monthly": 22.0,
-        "margin_yearly": 264.0,
-        "reason": "単価88万 / クラウド案件 / フルリモート"
+        "margin_monthly": 24.0,
+        "margin_yearly": 288.0,
+        "reason": "単価96万 / クラウド案件 / 上流工程 / 一部リモート"
       },
       {
         "name": "",
@@ -281,22 +335,6 @@
         "margin_monthly": 37.5,
         "margin_yearly": 450.0,
         "reason": "単価150万(高) / クラウド案件 / 長期"
-      },
-      {
-        "name": "",
-        "unit_price": 96,
-        "skills": "AWS, Azure, ネットワーク, クラウド",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 24.0,
-        "margin_yearly": 288.0,
-        "reason": "単価96万 / クラウド案件 / 上流工程 / 一部リモート"
       },
       {
         "name": "",
@@ -457,6 +495,22 @@
         "margin_monthly": 24.0,
         "margin_yearly": 288.0,
         "reason": "単価96万 / クラウド案件 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 62,
+        "skills": "クラウド",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "B(検討)",
+        "score": 4,
+        "margin_monthly": 15.5,
+        "margin_yearly": 186.0,
+        "reason": "単価62万 / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -719,11 +773,6 @@
   },
   "trend": [
     {
-      "date": "2026-06-29",
-      "realestate_count": 6,
-      "ses_count": 40
-    },
-    {
       "date": "2026-06-30",
       "realestate_count": 3,
       "ses_count": 37
@@ -787,6 +836,11 @@
       "date": "2026-07-12",
       "realestate_count": 1,
       "ses_count": 43
+    },
+    {
+      "date": "2026-07-13",
+      "realestate_count": 4,
+      "ses_count": 43
     }
   ],
   "form_stats": {
@@ -798,10 +852,6 @@
         "prev_month": 1,
         "diff": -1,
         "last_30days": [
-          {
-            "date": "2026-06-13",
-            "count": 0
-          },
           {
             "date": "2026-06-14",
             "count": 0
@@ -916,6 +966,10 @@
           },
           {
             "date": "2026-07-12",
+            "count": 0
+          },
+          {
+            "date": "2026-07-13",
             "count": 0
           }
         ],
@@ -939,10 +993,6 @@
         "diff": -1,
         "last_30days": [
           {
-            "date": "2026-06-13",
-            "count": 0
-          },
-          {
             "date": "2026-06-14",
             "count": 0
           },
@@ -1056,6 +1106,10 @@
           },
           {
             "date": "2026-07-12",
+            "count": 0
+          },
+          {
+            "date": "2026-07-13",
             "count": 0
           }
         ],
@@ -1099,6 +1153,7 @@
         "prev_month": 0,
         "diff": 1,
         "last_30days": {
+          "2026-07-13": 1,
           "2026-07-12": 0,
           "2026-07-11": 0,
           "2026-07-10": 0,
@@ -1127,8 +1182,7 @@
           "2026-06-17": 0,
           "2026-06-16": 0,
           "2026-06-15": 0,
-          "2026-06-14": 0,
-          "2026-06-13": 0
+          "2026-06-14": 0
         },
         "by_route": {
           "sell.html": 1
