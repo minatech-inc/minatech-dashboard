@@ -1,67 +1,129 @@
 {
-  "generated_at": "2026-08-11T09:18:41",
-  "data_date": "2026-08-11",
+  "generated_at": "2026-08-14T21:27:34",
+  "data_date": "2026-08-14",
   "realestate": {
     "items": [
       {
         "name": "",
-        "location": "神奈川県横浜市保土ケ谷区桜ヶ丘1",
-        "price": 445,
-        "yield_surface": 11.0,
-        "yield_real": 8.2,
-        "age": 35,
-        "station_min": 7,
-        "area": 16.6,
-        "structure": "RC",
-        "risk": "中低",
-        "area_eval": "主力(神奈川)",
-        "reason": "主力エリア / 利回り11.0% / 駅7分 / 445万",
-        "priority": "A(今週)",
-        "score": 6,
+        "location": "大阪府柏原市",
+        "price": 360,
+        "yield_surface": 16.33,
+        "yield_real": 12.2,
+        "age": 51,
+        "station_min": 9,
+        "area": 65.0,
+        "structure": "木造",
+        "risk": "低",
+        "area_eval": "主力(大阪)",
+        "reason": "主力エリア / 利回り16.33% / 駅9分 / 360万",
+        "priority": "S(即日)",
+        "score": 7,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3709907/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kansai/osaka/dim1004/3711460/show.html"
       },
       {
         "name": "",
-        "location": "神奈川県横浜市戸塚区戸塚町5102",
-        "price": 490,
-        "yield_surface": 9.99,
-        "yield_real": 7.5,
-        "age": 37,
-        "station_min": 6,
-        "area": 18.36,
-        "structure": "RC",
+        "location": "大阪市テラスOC◇内装リフォーム◇近隣便利◇駅徒歩圏",
+        "price": 410,
+        "yield_surface": 12.29,
+        "yield_real": 9.2,
+        "age": 64,
+        "station_min": 18,
+        "area": 37.0,
+        "structure": "木造",
         "risk": "中低",
-        "area_eval": "主力(神奈川)",
-        "reason": "主力エリア / 駅6分 / 490万",
+        "area_eval": "主力(大阪)",
+        "reason": "主力エリア / 利回り12.29% / 410万",
         "priority": "A(今週)",
         "score": 5,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3709906/show.html"
-      },
-      {
-        "name": "",
-        "location": "東京都八王子市北野町511",
-        "price": 400,
-        "yield_surface": 12.6,
-        "yield_real": 9.4,
-        "age": 35,
-        "station_min": 13,
-        "area": 17.43,
-        "structure": "RC",
-        "risk": "中",
-        "area_eval": "準主力(京都)",
-        "reason": "準主力エリア / 利回り12.6% / 400万",
-        "priority": "B(今月)",
-        "score": 4,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/tokyo/dim2001/3709908/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kansai/osaka/dim1004/3711456/show.html"
       }
     ],
-    "total_collected": 3
+    "total_collected": 2
   },
   "ses": {
     "items": [
+      {
+        "name": "",
+        "unit_price": 130,
+        "skills": "AWS, Azure, サーバー",
+        "work_style": "フルリモート",
+        "location": "",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "ココナラテック（旧：フリエン/furien）",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "S(即日提案)",
+        "score": 7,
+        "margin_monthly": 32.5,
+        "margin_yearly": 390.0,
+        "reason": "単価130万(高) / クラウド案件 / 上流工程 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 104,
+        "skills": "AWS, セキュリティ, Terraform, インフラ",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 26.0,
+        "margin_yearly": 312.0,
+        "reason": "単価104万(高) / クラウド案件 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 104,
+        "skills": "AWS",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 26.0,
+        "margin_yearly": 312.0,
+        "reason": "単価104万(高) / クラウド案件 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 100,
+        "skills": "AWS, インフラ, クラウド",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "クラウドワークス テック",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 25.0,
+        "margin_yearly": 300.0,
+        "reason": "単価100万(高) / クラウド案件 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 120,
+        "skills": "AWS",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 30.0,
+        "margin_yearly": 360.0,
+        "reason": "単価120万(高) / クラウド案件 / フルリモート"
+      },
       {
         "name": "",
         "unit_price": 100,
@@ -80,43 +142,11 @@
       },
       {
         "name": "",
-        "unit_price": 104,
-        "skills": "AWS, Azure, 監視, Terraform, インフラ, クラウド, SRE",
-        "work_style": "フルリモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "クラウドワークス テック",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 6,
-        "margin_monthly": 26.0,
-        "margin_yearly": 312.0,
-        "reason": "単価104万(高) / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 100,
-        "skills": "AWS, インフラ, クラウド, SRE",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "クラウドワークス テック",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "A(今週提案)",
-        "score": 6,
-        "margin_monthly": 25.0,
-        "margin_yearly": 300.0,
-        "reason": "単価100万(高) / クラウド案件 / 上流工程 / 一部リモート"
-      },
-      {
-        "name": "",
         "unit_price": 100,
         "skills": "AWS, 監視, インフラ, クラウド, SRE, DevOps",
         "work_style": "フルリモート",
         "location": "東京都",
-        "duration": "1ヶ月",
+        "duration": "2ヶ月",
         "site": "フリーランスHub",
         "provider": "クラウドワークス テック",
         "url": "https://freelance-hub.jp/project/search/?characteristic=20",
@@ -132,7 +162,7 @@
         "skills": "AWS, インフラ, クラウド",
         "work_style": "フルリモート",
         "location": "東京都",
-        "duration": "1ヶ月",
+        "duration": "2ヶ月",
         "site": "フリーランスHub",
         "provider": "クラウドワークス テック",
         "url": "https://freelance-hub.jp/project/search/?characteristic=20",
@@ -144,40 +174,8 @@
       },
       {
         "name": "",
-        "unit_price": 100,
-        "skills": "サーバー, 監視, クラウド",
-        "work_style": "フルリモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "クラウドワークス テック",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 6,
-        "margin_monthly": 25.0,
-        "margin_yearly": 300.0,
-        "reason": "単価100万(高) / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 108,
-        "skills": "AWS, Azure, GCP, サーバー, Terraform",
-        "work_style": "フルリモート",
-        "location": "",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "ココナラテック（旧：フリエン/furien）",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 6,
-        "margin_monthly": 27.0,
-        "margin_yearly": 324.0,
-        "reason": "単価108万(高) / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 96,
-        "skills": "AWS, クラウド",
+        "unit_price": 112,
+        "skills": "AWS, Azure, GCP, 監視, Docker",
         "work_style": "フルリモート",
         "location": "東京都",
         "duration": "",
@@ -185,10 +183,10 @@
         "provider": "Findy Freelance",
         "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 24.0,
-        "margin_yearly": 288.0,
-        "reason": "単価96万 / クラウド案件 / フルリモート"
+        "score": 6,
+        "margin_monthly": 28.0,
+        "margin_yearly": 336.0,
+        "reason": "単価112万(高) / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -208,51 +206,19 @@
       },
       {
         "name": "",
-        "unit_price": 105,
-        "skills": "AWS, Azure, サーバー, Linux, インフラ",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "3ヶ月",
-        "site": "フリーランスHub",
-        "provider": "フリーランスポート（Freelance Port）",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 26.2,
-        "margin_yearly": 315.0,
-        "reason": "単価105万(高) / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 80,
-        "skills": "AWS",
-        "work_style": "フルリモート",
-        "location": "大阪府",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "レバテックフリーランス",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 20.0,
-        "margin_yearly": 240.0,
-        "reason": "単価80万 / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 96,
-        "skills": "AWS, インフラ, クラウド",
+        "unit_price": 90,
+        "skills": "AWS, Terraform, インフラ, クラウド, DevOps",
         "work_style": "フルリモート",
         "location": "東京都",
         "duration": "",
         "site": "フリーランスHub",
-        "provider": "Findy Freelance",
+        "provider": "クラウドワークス テック",
         "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "A(今週提案)",
         "score": 5,
-        "margin_monthly": 24.0,
-        "margin_yearly": 288.0,
-        "reason": "単価96万 / クラウド案件 / フルリモート"
+        "margin_monthly": 22.5,
+        "margin_yearly": 270.0,
+        "reason": "単価90万 / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -272,59 +238,11 @@
       },
       {
         "name": "",
-        "unit_price": 90,
-        "skills": "AWS, Terraform, インフラ, クラウド, DevOps",
-        "work_style": "フルリモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "クラウドワークス テック",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 22.5,
-        "margin_yearly": 270.0,
-        "reason": "単価90万 / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 96,
-        "skills": "AWS, 監視, Docker, Kubernetes, インフラ, SRE",
-        "work_style": "フルリモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 24.0,
-        "margin_yearly": 288.0,
-        "reason": "単価96万 / クラウド案件 / フルリモート"
-      },
-      {
-        "name": "",
-        "unit_price": 100,
-        "skills": "AWS, サーバー, Terraform, インフラ",
-        "work_style": "一部リモート",
-        "location": "",
-        "duration": "3ヶ月",
-        "site": "フリーランスHub",
-        "provider": "mijicaフリーランス",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 25.0,
-        "margin_yearly": 300.0,
-        "reason": "単価100万(高) / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
         "unit_price": 104,
         "skills": "AWS, インフラ",
         "work_style": "一部リモート",
         "location": "",
-        "duration": "2ヶ月",
+        "duration": "3ヶ月",
         "site": "フリーランスHub",
         "provider": "Findy Freelance",
         "url": "https://freelance-hub.jp/project/characteristic/1/",
@@ -333,38 +251,6 @@
         "margin_monthly": 26.0,
         "margin_yearly": 312.0,
         "reason": "単価104万(高) / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 104,
-        "skills": "AWS, GCP, クラウド",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 26.0,
-        "margin_yearly": 312.0,
-        "reason": "単価104万(高) / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 90,
-        "skills": "インフラ, クラウド",
-        "work_style": "フルリモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "ココナラテック（旧：フリエン/furien）",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 22.5,
-        "margin_yearly": 270.0,
-        "reason": "単価90万 / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -384,13 +270,45 @@
       },
       {
         "name": "",
+        "unit_price": 125,
+        "skills": "ネットワーク, クラウド",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "レバテックフリーランス",
+        "url": "https://freelance-hub.jp/project/search/?keyword=オンライン商談OK",
+        "priority": "A(今週提案)",
+        "score": 5,
+        "margin_monthly": 31.2,
+        "margin_yearly": 375.0,
+        "reason": "単価125万(高) / クラウド案件 / 上流工程"
+      },
+      {
+        "name": "",
+        "unit_price": 125,
+        "skills": "AWS, セキュリティ, インフラ, クラウド",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 4,
+        "margin_monthly": 31.2,
+        "margin_yearly": 375.0,
+        "reason": "単価125万(高) / クラウド案件"
+      },
+      {
+        "name": "",
         "unit_price": 85,
-        "skills": "AWS, Azure, サーバー, Docker",
+        "skills": "AWS, サーバー, インフラ",
         "work_style": "一部リモート",
         "location": "東京都",
         "duration": "",
         "site": "フリーランスHub",
-        "provider": "mijicaフリーランス",
+        "provider": "ココナラテック（旧：フリエン/furien）",
         "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "B(検討)",
         "score": 4,
@@ -400,19 +318,19 @@
       },
       {
         "name": "",
-        "unit_price": 90,
-        "skills": "AWS, Terraform, インフラ",
+        "unit_price": 75,
+        "skills": "AWS, Azure, ネットワーク, インフラ, クラウド",
         "work_style": "一部リモート",
-        "location": "東京都",
+        "location": "大阪府",
         "duration": "",
         "site": "フリーランスHub",
-        "provider": "ココナラテック（旧：フリエン/furien）",
+        "provider": "レバテックフリーランス",
         "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "B(検討)",
         "score": 4,
-        "margin_monthly": 22.5,
-        "margin_yearly": 270.0,
-        "reason": "単価90万 / クラウド案件 / 一部リモート"
+        "margin_monthly": 18.8,
+        "margin_yearly": 225.0,
+        "reason": "単価75万 / クラウド案件 / 上流工程 / 一部リモート"
       },
       {
         "name": "",
@@ -432,19 +350,51 @@
       },
       {
         "name": "",
-        "unit_price": 80,
+        "unit_price": 104,
+        "skills": "AWS, GCP, インフラ, クラウド",
+        "work_style": "",
+        "location": "",
+        "duration": "2ヶ月",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 4,
+        "margin_monthly": 26.0,
+        "margin_yearly": 312.0,
+        "reason": "単価104万(高) / クラウド案件"
+      },
+      {
+        "name": "",
+        "unit_price": 112,
         "skills": "",
-        "work_style": "フルリモート",
+        "work_style": "一部リモート",
         "location": "東京都",
         "duration": "",
         "site": "フリーランスHub",
         "provider": "Findy Freelance",
-        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "B(検討)",
         "score": 4,
-        "margin_monthly": 20.0,
-        "margin_yearly": 240.0,
-        "reason": "単価80万 / フルリモート"
+        "margin_monthly": 28.0,
+        "margin_yearly": 336.0,
+        "reason": "単価112万(高) / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 120,
+        "skills": "",
+        "work_style": "一部リモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "priority": "B(検討)",
+        "score": 4,
+        "margin_monthly": 30.0,
+        "margin_yearly": 360.0,
+        "reason": "単価120万(高) / 一部リモート"
       },
       {
         "name": "",
@@ -464,19 +414,19 @@
       },
       {
         "name": "",
-        "unit_price": 60,
-        "skills": "ネットワーク, 監視, インフラ",
+        "unit_price": 100,
+        "skills": "ネットワーク, インフラ",
         "work_style": "一部リモート",
         "location": "東京都",
-        "duration": "長期",
+        "duration": "",
         "site": "フリーランスHub",
-        "provider": "HiPro Tech（ハイプロテック）",
+        "provider": "Midworks",
         "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "B(検討)",
         "score": 4,
-        "margin_monthly": 15.0,
-        "margin_yearly": 180.0,
-        "reason": "単価60万 / 上流工程 / 一部リモート / 長期"
+        "margin_monthly": 25.0,
+        "margin_yearly": 300.0,
+        "reason": "単価100万(高) / 一部リモート"
       },
       {
         "name": "",
@@ -496,6 +446,22 @@
       },
       {
         "name": "",
+        "unit_price": 63,
+        "skills": "AWS, 監視, インフラ",
+        "work_style": "一部リモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "ココナラテック（旧：フリエン/furien）",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 15.8,
+        "margin_yearly": 189.0,
+        "reason": "単価63万 / クラウド案件 / 一部リモート"
+      },
+      {
+        "name": "",
         "unit_price": 72,
         "skills": "AWS, Terraform, インフラ",
         "work_style": "一部リモート",
@@ -512,24 +478,8 @@
       },
       {
         "name": "",
-        "unit_price": 65,
-        "skills": "AWS",
-        "work_style": "一部リモート",
-        "location": "大阪府",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "レバテックフリーランス",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 3,
-        "margin_monthly": 16.2,
-        "margin_yearly": 195.0,
-        "reason": "単価65万 / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 60,
-        "skills": "AWS, サーバー",
+        "unit_price": 75,
+        "skills": "Azure, セキュリティ, インフラ, クラウド, DevOps",
         "work_style": "一部リモート",
         "location": "東京都",
         "duration": "",
@@ -538,9 +488,25 @@
         "url": "https://freelance-hub.jp/project/characteristic/1/",
         "priority": "B(検討)",
         "score": 3,
-        "margin_monthly": 15.0,
-        "margin_yearly": 180.0,
-        "reason": "単価60万 / クラウド案件 / 一部リモート"
+        "margin_monthly": 18.8,
+        "margin_yearly": 225.0,
+        "reason": "単価75万 / クラウド案件 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 85,
+        "skills": "ネットワーク, セキュリティ, インフラ, クラウド",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "ココナラテック（旧：フリエン/furien）",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 21.2,
+        "margin_yearly": 255.0,
+        "reason": "単価85万 / クラウド案件"
       },
       {
         "name": "",
@@ -560,35 +526,83 @@
       },
       {
         "name": "",
-        "unit_price": 70,
-        "skills": "AWS, サーバー, クラウド",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "ココナラテック（旧：フリエン/furien）",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 3,
-        "margin_monthly": 17.5,
-        "margin_yearly": 210.0,
-        "reason": "単価70万 / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 120,
-        "skills": "",
+        "unit_price": 95,
+        "skills": "クラウド",
         "work_style": "",
-        "location": "東京都",
+        "location": "大阪府",
         "duration": "",
         "site": "フリーランスHub",
         "provider": "レバテックフリーランス",
         "url": "https://freelance-hub.jp/project/search/?keyword=オンライン商談OK",
         "priority": "B(検討)",
         "score": 3,
-        "margin_monthly": 30.0,
-        "margin_yearly": 360.0,
-        "reason": "単価120万(高)"
+        "margin_monthly": 23.8,
+        "margin_yearly": 285.0,
+        "reason": "単価95万 / クラウド案件"
+      },
+      {
+        "name": "",
+        "unit_price": 85,
+        "skills": "Azure, インフラ, クラウド",
+        "work_style": "",
+        "location": "愛知県",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 21.2,
+        "margin_yearly": 255.0,
+        "reason": "単価85万 / クラウド案件"
+      },
+      {
+        "name": "",
+        "unit_price": 75,
+        "skills": "AWS, Azure, セキュリティ, 監視, Kubernetes, Terraform, インフラ, クラウド, DevOps",
+        "work_style": "一部リモート",
+        "location": "福岡県",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "レバテックフリーランス",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 18.8,
+        "margin_yearly": 225.0,
+        "reason": "単価75万 / クラウド案件 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 115,
+        "skills": "ネットワーク",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 28.8,
+        "margin_yearly": 345.0,
+        "reason": "単価115万(高)"
+      },
+      {
+        "name": "",
+        "unit_price": 100,
+        "skills": "ネットワーク, セキュリティ, 監視, インフラ",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 25.0,
+        "margin_yearly": 300.0,
+        "reason": "単価100万(高)"
       },
       {
         "name": "",
@@ -624,22 +638,6 @@
       },
       {
         "name": "",
-        "unit_price": 95,
-        "skills": "ネットワーク",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "2ヶ月",
-        "site": "フリーランスHub",
-        "provider": "レバテックフリーランス",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 3,
-        "margin_monthly": 23.8,
-        "margin_yearly": 285.0,
-        "reason": "単価95万 / 一部リモート"
-      },
-      {
-        "name": "",
         "unit_price": 65,
         "skills": "ネットワーク, クラウド",
         "work_style": "一部リモート",
@@ -653,42 +651,11 @@
         "margin_monthly": 16.2,
         "margin_yearly": 195.0,
         "reason": "単価65万 / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 70,
-        "skills": "AWS, ネットワーク, クラウド",
-        "work_style": "一部リモート",
-        "location": "東京都",
-        "duration": "2ヶ月",
-        "site": "フリーランスHub",
-        "provider": "ココナラテック（旧：フリエン/furien）",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 3,
-        "margin_monthly": 17.5,
-        "margin_yearly": 210.0,
-        "reason": "単価70万 / クラウド案件 / 一部リモート"
       }
     ],
     "total_collected": 38
   },
   "trend": [
-    {
-      "date": "2026-07-29",
-      "realestate_count": 9,
-      "ses_count": 49
-    },
-    {
-      "date": "2026-07-30",
-      "realestate_count": 0,
-      "ses_count": 0
-    },
-    {
-      "date": "2026-07-31",
-      "realestate_count": 5,
-      "ses_count": 45
-    },
     {
       "date": "2026-08-01",
       "realestate_count": 4,
@@ -743,6 +710,21 @@
       "date": "2026-08-11",
       "realestate_count": 3,
       "ses_count": 38
+    },
+    {
+      "date": "2026-08-12",
+      "realestate_count": 0,
+      "ses_count": 0
+    },
+    {
+      "date": "2026-08-13",
+      "realestate_count": 0,
+      "ses_count": 0
+    },
+    {
+      "date": "2026-08-14",
+      "realestate_count": 2,
+      "ses_count": 38
     }
   ],
   "form_stats": {
@@ -754,18 +736,6 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [
-          {
-            "date": "2026-07-13",
-            "count": 0
-          },
-          {
-            "date": "2026-07-14",
-            "count": 0
-          },
-          {
-            "date": "2026-07-15",
-            "count": 0
-          },
           {
             "date": "2026-07-16",
             "count": 0
@@ -872,6 +842,18 @@
           },
           {
             "date": "2026-08-11",
+            "count": 0
+          },
+          {
+            "date": "2026-08-12",
+            "count": 0
+          },
+          {
+            "date": "2026-08-13",
+            "count": 0
+          },
+          {
+            "date": "2026-08-14",
             "count": 0
           }
         ],
@@ -895,18 +877,6 @@
         "diff": 0,
         "last_30days": [
           {
-            "date": "2026-07-13",
-            "count": 0
-          },
-          {
-            "date": "2026-07-14",
-            "count": 0
-          },
-          {
-            "date": "2026-07-15",
-            "count": 0
-          },
-          {
             "date": "2026-07-16",
             "count": 0
           },
@@ -1012,6 +982,18 @@
           },
           {
             "date": "2026-08-11",
+            "count": 0
+          },
+          {
+            "date": "2026-08-12",
+            "count": 0
+          },
+          {
+            "date": "2026-08-13",
+            "count": 0
+          },
+          {
+            "date": "2026-08-14",
             "count": 0
           }
         ],
@@ -1055,6 +1037,9 @@
         "prev_month": 2,
         "diff": -2,
         "last_30days": {
+          "2026-08-14": 0,
+          "2026-08-13": 0,
+          "2026-08-12": 0,
           "2026-08-11": 0,
           "2026-08-10": 0,
           "2026-08-09": 0,
@@ -1081,10 +1066,7 @@
           "2026-07-19": 0,
           "2026-07-18": 0,
           "2026-07-17": 0,
-          "2026-07-16": 0,
-          "2026-07-15": 0,
-          "2026-07-14": 0,
-          "2026-07-13": 1
+          "2026-07-16": 0
         },
         "by_route": {
           "sell.html": 1,
