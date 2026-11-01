@@ -1,157 +1,299 @@
 {
-  "generated_at": "2026-10-31T09:01:02",
-  "data_date": "2026-10-31",
+  "generated_at": "2026-11-01T09:01:00",
+  "data_date": "2026-11-01",
   "realestate": {
     "items": [
       {
         "name": "",
-        "location": "埼玉県さいたま市北区奈良町49",
-        "price": 440,
-        "yield_surface": 10.9,
-        "yield_real": 8.2,
-        "age": 40,
-        "station_min": 9,
-        "area": 18.0,
+        "location": "神奈川県相模原市中央区矢部３−２２−１３",
+        "price": 220,
+        "yield_surface": 15.6,
+        "yield_real": 11.7,
+        "age": 36,
+        "station_min": 5,
+        "area": 16.24,
         "structure": "RC",
-        "risk": "中低",
-        "area_eval": "主力(埼玉)",
-        "reason": "主力エリア / 利回り10.9% / 駅9分 / 440万",
-        "priority": "A(今週)",
-        "score": 6,
+        "risk": "低",
+        "area_eval": "主力(神奈川)",
+        "reason": "主力エリア / 利回り15.6% / 駅5分 / 220万",
+        "priority": "S(即日)",
+        "score": 7,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/saitama/dim2001/3784182/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3785142/show.html"
       },
       {
         "name": "",
-        "location": "埼玉県所沢市小手指町2",
-        "price": 500,
-        "yield_surface": 10.0,
-        "yield_real": 7.5,
-        "age": 43,
-        "station_min": 10,
-        "area": 16.47,
-        "structure": "RC",
-        "risk": "中低",
-        "area_eval": "主力(埼玉)",
-        "reason": "主力エリア / 利回り10.0% / 駅10分 / 500万",
-        "priority": "A(今週)",
-        "score": 6,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/saitama/dim2001/3784181/show.html"
-      },
-      {
-        "name": "",
-        "location": "千葉県千葉市中央区蘇我1",
-        "price": 400,
-        "yield_surface": 12.0,
-        "yield_real": 9.0,
-        "age": 39,
-        "station_min": 12,
-        "area": 17.72,
+        "location": "千葉県船橋市夏見２−２５−３",
+        "price": 360,
+        "yield_surface": 18.33,
+        "yield_real": 13.7,
+        "age": 59,
+        "station_min": 19,
+        "area": 25.37,
         "structure": "RC",
         "risk": "中低",
         "area_eval": "主力(千葉)",
-        "reason": "主力エリア / 利回り12.0% / 400万",
+        "reason": "主力エリア / 利回り18.33% / 360万",
         "priority": "A(今週)",
-        "score": 5,
+        "score": 6,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/chiba/dim2001/3784183/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/chiba/dim2001/3785144/show.html"
       },
       {
         "name": "",
-        "location": "東京都青梅市大柳町１５００−３",
-        "price": 440,
-        "yield_surface": 60.0,
-        "yield_real": 45.0,
-        "age": null,
-        "station_min": 13,
-        "area": 136.08,
-        "structure": "",
+        "location": "神奈川県相模原市中央区相模原5",
+        "price": 493,
+        "yield_surface": 10.95,
+        "yield_real": 8.2,
+        "age": 36,
+        "station_min": 11,
+        "area": 16.75,
+        "structure": "SRC",
         "risk": "中低",
-        "area_eval": "準主力(京都)",
-        "reason": "準主力エリア / 利回り60.0% / 440万",
+        "area_eval": "主力(神奈川)",
+        "reason": "主力エリア / 利回り10.95% / 493万",
         "priority": "A(今週)",
         "score": 5,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/tokyo/dim3001/3784174/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3785154/show.html"
       },
       {
         "name": "",
-        "location": "東京都八王子市元横山町２−９−１０",
-        "price": 399,
-        "yield_surface": 13.53,
-        "yield_real": 10.1,
-        "age": 43,
-        "station_min": 10,
-        "area": 14.0,
-        "structure": "RC",
-        "risk": "中低",
-        "area_eval": "準主力(京都)",
-        "reason": "準主力エリア / 利回り13.53% / 駅10分 / 399万",
-        "priority": "A(今週)",
-        "score": 5,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/tokyo/dim2001/3784169/show.html"
-      },
-      {
-        "name": "",
-        "location": "広島県広島市西区高須１−６−１０",
-        "price": 480,
+        "location": "神奈川県相模原市中央区相模原4丁目",
+        "price": 380,
         "yield_surface": null,
         "yield_real": null,
-        "age": 47,
-        "station_min": 2,
-        "area": 71.42,
-        "structure": "RC",
+        "age": 32,
+        "station_min": 9,
+        "area": 15.17,
+        "structure": "",
+        "risk": "中低",
+        "area_eval": "主力(神奈川)",
+        "reason": "主力エリア / 駅9分 / 380万",
+        "priority": "A(今週)",
+        "score": 5,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "北海道札幌市西区八軒１条東１−５−１３",
+        "price": 500,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 53,
+        "station_min": 4,
+        "area": 38.66,
+        "structure": "SRC",
         "risk": "中",
-        "area_eval": "準主力(広島)",
-        "reason": "準主力エリア / 駅2分 / 480万",
+        "area_eval": "準主力(北海道)",
+        "reason": "準主力エリア / 駅4分 / 500万",
         "priority": "B(今月)",
         "score": 4,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/chugoku/hiroshima/dim2001/3784161/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/hokkaido/hokkaido/dim2001/3785137/show.html"
       },
       {
         "name": "",
-        "location": "滋賀県高島市安曇川町田中５０３",
-        "price": 480,
-        "yield_surface": 11.5,
-        "yield_real": 8.6,
-        "age": 36,
-        "station_min": 8,
-        "area": 53.0,
-        "structure": "鉄骨",
-        "risk": "中",
-        "area_eval": "条件付き(滋賀)",
-        "reason": "利回り11.5% / 駅8分 / 480万",
-        "priority": "B(今月)",
-        "score": 3,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kansai/shiga/dim2001/3784167/show.html"
-      },
-      {
-        "name": "",
-        "location": "静岡県御殿場市大坂９４−１",
-        "price": 340,
+        "location": "茨城県小美玉市羽鳥",
+        "price": 440,
         "yield_surface": null,
         "yield_real": null,
-        "age": 36,
-        "station_min": 24,
-        "area": 74.48,
-        "structure": "RC",
+        "age": null,
+        "station_min": 9,
+        "area": 260.0,
+        "structure": "",
         "risk": "中",
-        "area_eval": "準主力(静岡)",
-        "reason": "準主力エリア / 340万",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 駅9分 / 440万",
+        "priority": "B(今月)",
+        "score": 4,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県常陸太田市宮本町",
+        "price": 88,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 60,
+        "station_min": 29,
+        "area": 101.25,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 88万",
         "priority": "B(今月)",
         "score": 3,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/tokai/shizuoka/dim2001/3784164/show.html"
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県小美玉市納場",
+        "price": 130,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 45,
+        "area": 174.56,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 130万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県土浦市沢辺",
+        "price": 100,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 99,
+        "area": 251.0,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 100万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県石岡市若松3丁目",
+        "price": 450,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 26,
+        "area": 235.0,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 450万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県小美玉市西郷地",
+        "price": 450,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 174,
+        "area": 204.98,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 450万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県牛久市小坂町",
+        "price": 330,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 88,
+        "area": 171.73,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 330万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県筑西市下中山",
+        "price": 195,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 18,
+        "area": 164.8,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 195万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県行方市羽生",
+        "price": 350,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 34,
+        "station_min": 377,
+        "area": 135.12,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 350万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県行方市羽生",
+        "price": 450,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 144,
+        "station_min": 129,
+        "area": 153.7,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 450万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
       }
     ],
-    "total_collected": 8
+    "total_collected": 15
   },
   "ses": {
     "items": [
+      {
+        "name": "",
+        "unit_price": 115,
+        "skills": "AWS, Azure, GCP, ネットワーク, セキュリティ, インフラ, クラウド",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "レバテックフリーランス",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "S(即日提案)",
+        "score": 7,
+        "margin_monthly": 28.8,
+        "margin_yearly": 345.0,
+        "reason": "単価115万(高) / クラウド案件 / 上流工程 / フルリモート"
+      },
       {
         "name": "",
         "unit_price": 120,
@@ -231,22 +373,6 @@
         "margin_monthly": 30.0,
         "margin_yearly": 360.0,
         "reason": "単価120万(高) / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 110,
-        "skills": "AWS, 監視, Terraform, Ansible, インフラ, クラウド",
-        "work_style": "",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "Midworks",
-        "url": "",
-        "priority": "A(今週提案)",
-        "score": 5,
-        "margin_monthly": 27.5,
-        "margin_yearly": 330.0,
-        "reason": "単価110万(高) / クラウド案件 / 上流工程"
       },
       {
         "name": "",
@@ -331,7 +457,7 @@
       {
         "name": "",
         "unit_price": 90,
-        "skills": "AWS, サーバー, インフラ",
+        "skills": "AWS, サーバー",
         "work_style": "一部リモート",
         "location": "東京都",
         "duration": "",
@@ -491,22 +617,6 @@
       {
         "name": "",
         "unit_price": 85,
-        "skills": "AWS, サーバー, クラウド",
-        "work_style": "一部リモート",
-        "location": "",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "mijicaフリーランス",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 4,
-        "margin_monthly": 21.2,
-        "margin_yearly": 255.0,
-        "reason": "単価85万 / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
-        "unit_price": 85,
         "skills": "Azure, サーバー, Linux, インフラ, クラウド",
         "work_style": "",
         "location": "東京都",
@@ -615,6 +725,22 @@
         "margin_monthly": 18.0,
         "margin_yearly": 216.0,
         "reason": "単価72万 / クラウド案件 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 90,
+        "skills": "AWS, クラウド",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 22.5,
+        "margin_yearly": 270.0,
+        "reason": "単価90万 / クラウド案件"
       },
       {
         "name": "",
@@ -794,6 +920,22 @@
       },
       {
         "name": "",
+        "unit_price": 90,
+        "skills": "セキュリティ, クラウド",
+        "work_style": "",
+        "location": "東京都",
+        "duration": "2ヶ月",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 22.5,
+        "margin_yearly": 270.0,
+        "reason": "単価90万 / クラウド案件"
+      },
+      {
+        "name": "",
         "unit_price": 100,
         "skills": "ネットワーク, セキュリティ",
         "work_style": "",
@@ -921,14 +1063,9 @@
         "reason": "単価80万 / 上流工程"
       }
     ],
-    "total_collected": 48
+    "total_collected": 49
   },
   "trend": [
-    {
-      "date": "2026-10-18",
-      "realestate_count": 8,
-      "ses_count": 44
-    },
     {
       "date": "2026-10-19",
       "realestate_count": 4,
@@ -993,6 +1130,11 @@
       "date": "2026-10-31",
       "realestate_count": 8,
       "ses_count": 48
+    },
+    {
+      "date": "2026-11-01",
+      "realestate_count": 15,
+      "ses_count": 49
     }
   ],
   "form_stats": {
@@ -1004,10 +1146,6 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [
-          {
-            "date": "2026-10-02",
-            "count": 0
-          },
           {
             "date": "2026-10-03",
             "count": 0
@@ -1122,6 +1260,10 @@
           },
           {
             "date": "2026-10-31",
+            "count": 0
+          },
+          {
+            "date": "2026-11-01",
             "count": 0
           }
         ],
@@ -1145,10 +1287,6 @@
         "diff": 0,
         "last_30days": [
           {
-            "date": "2026-10-02",
-            "count": 0
-          },
-          {
             "date": "2026-10-03",
             "count": 0
           },
@@ -1262,6 +1400,10 @@
           },
           {
             "date": "2026-10-31",
+            "count": 0
+          },
+          {
+            "date": "2026-11-01",
             "count": 0
           }
         ],
@@ -1290,12 +1432,9 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [],
-        "by_route": {},
-        "by_status": {},
-        "by_assignee": {},
-        "month_revenue": 0,
-        "month_deal_count": 0
-      }
+        "by_route": {}
+      },
+      "error": "The read operation timed out"
     },
     "sell": {
       "label": "売却査定",
@@ -1305,6 +1444,7 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": {
+          "2026-11-01": 0,
           "2026-10-31": 0,
           "2026-10-30": 0,
           "2026-10-29": 0,
@@ -1333,8 +1473,7 @@
           "2026-10-06": 0,
           "2026-10-05": 0,
           "2026-10-04": 0,
-          "2026-10-03": 0,
-          "2026-10-02": 0
+          "2026-10-03": 0
         },
         "by_route": {
           "sell.html": 1,
