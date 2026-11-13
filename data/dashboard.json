@@ -1,64 +1,136 @@
 {
-  "generated_at": "2026-11-12T09:00:57",
-  "data_date": "2026-11-12",
+  "generated_at": "2026-11-13T09:01:37",
+  "data_date": "2026-11-13",
   "realestate": {
     "items": [
       {
         "name": "",
-        "location": "福岡県福岡市南区大橋３丁目",
-        "price": 500,
-        "yield_surface": 60.0,
-        "yield_real": 45.0,
-        "age": null,
-        "station_min": 12,
-        "area": 262.23,
-        "structure": "",
-        "risk": "中低",
-        "area_eval": "主力(福岡)",
-        "reason": "主力エリア / 利回り60.0% / 500万",
-        "priority": "A(今週)",
-        "score": 6,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kyushu/fukuoka/dim3001/3795212/show.html"
-      },
-      {
-        "name": "",
-        "location": "神奈川県相模原市中央区淵野辺2",
-        "price": 220,
-        "yield_surface": 12.27,
-        "yield_real": 9.2,
-        "age": 37,
-        "station_min": 12,
-        "area": 16.12,
+        "location": "神奈川県大和市深見西1",
+        "price": 330,
+        "yield_surface": 13.81,
+        "yield_real": 10.4,
+        "age": 36,
+        "station_min": 10,
+        "area": 16.43,
         "structure": "RC",
         "risk": "中低",
         "area_eval": "主力(神奈川)",
-        "reason": "主力エリア / 利回り12.27% / 220万",
+        "reason": "主力エリア / 利回り13.81% / 駅10分 / 330万",
         "priority": "A(今週)",
-        "score": 5,
+        "score": 6,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3795235/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3796438/show.html"
       },
       {
         "name": "",
-        "location": "東京都八王子市散田町1",
-        "price": 380,
-        "yield_surface": 13.0,
-        "yield_real": 9.8,
-        "age": 42,
-        "station_min": 8,
-        "area": 14.87,
+        "location": "宮城県仙台市青葉区立町６−２０",
+        "price": 279,
+        "yield_surface": 18.06,
+        "yield_real": 13.5,
+        "age": 54,
+        "station_min": 10,
+        "area": 31.78,
         "structure": "RC",
         "risk": "中低",
-        "area_eval": "準主力(京都)",
-        "reason": "準主力エリア / 利回り13.0% / 駅8分 / 380万",
+        "area_eval": "準主力(宮城)",
+        "reason": "準主力エリア / 利回り18.06% / 駅10分 / 279万",
+        "priority": "A(今週)",
+        "score": 6,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/tohoku/miyagi/dim2001/3796427/show.html"
+      },
+      {
+        "name": "",
+        "location": "愛知県名古屋市昭和区元宮町３−８１",
+        "price": 340,
+        "yield_surface": 14.36,
+        "yield_real": 10.8,
+        "age": 38,
+        "station_min": 13,
+        "area": 16.8,
+        "structure": "RC",
+        "risk": "中低",
+        "area_eval": "主力(愛知)",
+        "reason": "主力エリア / 利回り14.36% / 340万",
         "priority": "A(今週)",
         "score": 5,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/tokyo/dim2001/3795234/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/tokai/aichi/dim2001/3796431/show.html"
+      },
+      {
+        "name": "",
+        "location": "愛知県名古屋市東区葵１−２６−１０",
+        "price": 270,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 53,
+        "station_min": 3,
+        "area": 18.72,
+        "structure": "SRC",
+        "risk": "中低",
+        "area_eval": "主力(愛知)",
+        "reason": "主力エリア / 駅3分 / 270万",
+        "priority": "A(今週)",
+        "score": 5,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/tokai/aichi/dim2001/3796425/show.html"
+      },
+      {
+        "name": "",
+        "location": "千葉県松戸市八ケ崎6丁目に位置する一棟アパート。198",
+        "price": 286,
+        "yield_surface": 8.69,
+        "yield_real": 6.5,
+        "age": 38,
+        "station_min": 12,
+        "area": 150.7,
+        "structure": "木造",
+        "risk": "中",
+        "area_eval": "主力(千葉)",
+        "reason": "主力エリア / 286万",
+        "priority": "B(今月)",
+        "score": 4,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/chiba/dim1002/3796441/show.html"
+      },
+      {
+        "name": "",
+        "location": "茨城県水戸市城南３−９−３２",
+        "price": 270,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 36,
+        "station_min": 12,
+        "area": 14.28,
+        "structure": "鉄骨",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 270万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "楽待",
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/ibaraki/dim2001/3796418/show.html"
+      },
+      {
+        "name": "",
+        "location": "茨城県ひたちなか市大字津田",
+        "price": 450,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 43,
+        "area": 306.63,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 450万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
       }
     ],
-    "total_collected": 3
+    "total_collected": 7
   },
   "ses": {
     "items": [
@@ -96,19 +168,19 @@
       },
       {
         "name": "",
-        "unit_price": 100,
-        "skills": "クラウド",
-        "work_style": "一部リモート",
-        "location": "東京都",
+        "unit_price": 115,
+        "skills": "AWS, セキュリティ, Docker, インフラ, クラウド",
+        "work_style": "フルリモート",
+        "location": "大阪府",
         "duration": "",
         "site": "フリーランスHub",
         "provider": "クラウドワークス テック",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "A(今週提案)",
         "score": 6,
-        "margin_monthly": 25.0,
-        "margin_yearly": 300.0,
-        "reason": "単価100万(高) / クラウド案件 / 上流工程 / 一部リモート"
+        "margin_monthly": 28.8,
+        "margin_yearly": 345.0,
+        "reason": "単価115万(高) / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -125,6 +197,38 @@
         "margin_monthly": 26.0,
         "margin_yearly": 312.0,
         "reason": "単価104万(高) / クラウド案件 / 上流工程 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 100,
+        "skills": "クラウド",
+        "work_style": "一部リモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "クラウドワークス テック",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 25.0,
+        "margin_yearly": 300.0,
+        "reason": "単価100万(高) / クラウド案件 / 上流工程 / 一部リモート"
+      },
+      {
+        "name": "",
+        "unit_price": 135,
+        "skills": "AWS, サーバー, インフラ",
+        "work_style": "フルリモート",
+        "location": "大阪府",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "レバテッククリエイター",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 33.8,
+        "margin_yearly": 405.0,
+        "reason": "単価135万(高) / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -160,8 +264,8 @@
       },
       {
         "name": "",
-        "unit_price": 88,
-        "skills": "AWS, Azure, Linux, Terraform, インフラ, クラウド, SRE",
+        "unit_price": 104,
+        "skills": "AWS",
         "work_style": "フルリモート",
         "location": "東京都",
         "duration": "",
@@ -170,9 +274,25 @@
         "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "A(今週提案)",
         "score": 6,
-        "margin_monthly": 22.0,
-        "margin_yearly": 264.0,
-        "reason": "単価88万 / クラウド案件 / 上流工程 / フルリモート"
+        "margin_monthly": 26.0,
+        "margin_yearly": 312.0,
+        "reason": "単価104万(高) / クラウド案件 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 100,
+        "skills": "Azure, インフラ, クラウド",
+        "work_style": "フルリモート",
+        "location": "東京都",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "クラウドワークス テック",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
+        "priority": "A(今週提案)",
+        "score": 6,
+        "margin_monthly": 25.0,
+        "margin_yearly": 300.0,
+        "reason": "単価100万(高) / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -288,22 +408,6 @@
       },
       {
         "name": "",
-        "unit_price": 85,
-        "skills": "AWS, GCP, セキュリティ, 監視, Linux, Docker, Kubernetes, Terraform, インフラ, クラウド, SRE",
-        "work_style": "一部リモート",
-        "location": "",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "mijicaフリーランス",
-        "url": "https://freelance-hub.jp/project/characteristic/1/",
-        "priority": "B(検討)",
-        "score": 4,
-        "margin_monthly": 21.2,
-        "margin_yearly": 255.0,
-        "reason": "単価85万 / クラウド案件 / 一部リモート"
-      },
-      {
-        "name": "",
         "unit_price": 100,
         "skills": "AWS, 監視, インフラ, クラウド",
         "work_style": "",
@@ -368,35 +472,19 @@
       },
       {
         "name": "",
-        "unit_price": 90,
-        "skills": "インフラ, クラウド",
-        "work_style": "",
-        "location": "東京都",
+        "unit_price": 60,
+        "skills": "クラウド",
+        "work_style": "フルリモート",
+        "location": "福岡県",
         "duration": "",
         "site": "フリーランスHub",
-        "provider": "Midworks",
-        "url": "",
+        "provider": "レバテックフリーランス",
+        "url": "https://freelance-hub.jp/project/search/?characteristic=20",
         "priority": "B(検討)",
         "score": 4,
-        "margin_monthly": 22.5,
-        "margin_yearly": 270.0,
-        "reason": "単価90万 / クラウド案件 / 上流工程"
-      },
-      {
-        "name": "",
-        "unit_price": 128,
-        "skills": "セキュリティ, クラウド",
-        "work_style": "",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "Findy Freelance",
-        "url": "",
-        "priority": "B(検討)",
-        "score": 4,
-        "margin_monthly": 32.0,
-        "margin_yearly": 384.0,
-        "reason": "単価128万(高) / クラウド案件"
+        "margin_monthly": 15.0,
+        "margin_yearly": 180.0,
+        "reason": "単価60万 / クラウド案件 / フルリモート"
       },
       {
         "name": "",
@@ -413,6 +501,22 @@
         "margin_monthly": 24.0,
         "margin_yearly": 288.0,
         "reason": "単価96万 / フルリモート"
+      },
+      {
+        "name": "",
+        "unit_price": 120,
+        "skills": "インフラ, クラウド",
+        "work_style": "",
+        "location": "神奈川県",
+        "duration": "3ヶ月",
+        "site": "フリーランスHub",
+        "provider": "Midworks",
+        "url": "",
+        "priority": "B(検討)",
+        "score": 4,
+        "margin_monthly": 30.0,
+        "margin_yearly": 360.0,
+        "reason": "単価120万(高) / クラウド案件"
       },
       {
         "name": "",
@@ -480,22 +584,6 @@
       },
       {
         "name": "",
-        "unit_price": 82,
-        "skills": "AWS",
-        "work_style": "",
-        "location": "東京都",
-        "duration": "",
-        "site": "フリーランスHub",
-        "provider": "レバテッククリエイター",
-        "url": "",
-        "priority": "B(検討)",
-        "score": 3,
-        "margin_monthly": 20.5,
-        "margin_yearly": 246.0,
-        "reason": "単価82万 / クラウド案件"
-      },
-      {
-        "name": "",
         "unit_price": 80,
         "skills": "AWS, インフラ",
         "work_style": "",
@@ -560,6 +648,22 @@
       },
       {
         "name": "",
+        "unit_price": 96,
+        "skills": "",
+        "work_style": "一部リモート",
+        "location": "",
+        "duration": "",
+        "site": "フリーランスHub",
+        "provider": "Findy Freelance",
+        "url": "https://freelance-hub.jp/project/characteristic/1/",
+        "priority": "B(検討)",
+        "score": 3,
+        "margin_monthly": 24.0,
+        "margin_yearly": 288.0,
+        "reason": "単価96万 / 一部リモート"
+      },
+      {
+        "name": "",
         "unit_price": 95,
         "skills": "インフラ",
         "work_style": "一部リモート",
@@ -580,7 +684,7 @@
         "skills": "セキュリティ, クラウド",
         "work_style": "",
         "location": "東京都",
-        "duration": "2ヶ月",
+        "duration": "3ヶ月",
         "site": "フリーランスHub",
         "provider": "Midworks",
         "url": "",
@@ -628,7 +732,7 @@
         "skills": "ネットワーク, セキュリティ, 監視",
         "work_style": "一部リモート",
         "location": "東京都",
-        "duration": "2ヶ月",
+        "duration": "3ヶ月",
         "site": "フリーランスHub",
         "provider": "フリコン",
         "url": "https://freelance-hub.jp/project/characteristic/1/",
@@ -703,14 +807,9 @@
         "reason": "単価75万 / クラウド案件 / 上流工程"
       }
     ],
-    "total_collected": 40
+    "total_collected": 42
   },
   "trend": [
-    {
-      "date": "2026-10-30",
-      "realestate_count": 7,
-      "ses_count": 43
-    },
     {
       "date": "2026-10-31",
       "realestate_count": 8,
@@ -775,6 +874,11 @@
       "date": "2026-11-12",
       "realestate_count": 3,
       "ses_count": 40
+    },
+    {
+      "date": "2026-11-13",
+      "realestate_count": 7,
+      "ses_count": 42
     }
   ],
   "form_stats": {
@@ -786,10 +890,6 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [
-          {
-            "date": "2026-10-14",
-            "count": 0
-          },
           {
             "date": "2026-10-15",
             "count": 0
@@ -904,6 +1004,10 @@
           },
           {
             "date": "2026-11-12",
+            "count": 0
+          },
+          {
+            "date": "2026-11-13",
             "count": 0
           }
         ],
@@ -927,10 +1031,6 @@
         "diff": 0,
         "last_30days": [
           {
-            "date": "2026-10-14",
-            "count": 0
-          },
-          {
             "date": "2026-10-15",
             "count": 0
           },
@@ -1044,6 +1144,10 @@
           },
           {
             "date": "2026-11-12",
+            "count": 0
+          },
+          {
+            "date": "2026-11-13",
             "count": 0
           }
         ],
@@ -1087,6 +1191,7 @@
         "prev_month": 0,
         "diff": 1,
         "last_30days": {
+          "2026-11-13": 0,
           "2026-11-12": 0,
           "2026-11-11": 0,
           "2026-11-10": 0,
@@ -1115,8 +1220,7 @@
           "2026-10-18": 0,
           "2026-10-17": 0,
           "2026-10-16": 0,
-          "2026-10-15": 0,
-          "2026-10-14": 0
+          "2026-10-15": 0
         },
         "by_route": {
           "sell.html": 2,
