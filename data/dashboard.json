@@ -1,111 +1,142 @@
 {
-  "generated_at": "2026-11-27T09:00:51",
-  "data_date": "2026-11-27",
+  "generated_at": "2026-11-28T09:00:47",
+  "data_date": "2026-11-28",
   "realestate": {
     "items": [
       {
         "name": "",
-        "location": "神奈川県川崎市多摩区菅野戸呂11",
-        "price": 200,
-        "yield_surface": 18.36,
-        "yield_real": 13.8,
-        "age": 40,
-        "station_min": 15,
-        "area": 19.84,
-        "structure": "RC",
+        "location": "兵庫県神戸市北区有馬町１２２９−２",
+        "price": 430,
+        "yield_surface": 23.16,
+        "yield_real": 17.4,
+        "age": 52,
+        "station_min": 12,
+        "area": 74.08,
+        "structure": "SRC",
         "risk": "中低",
-        "area_eval": "主力(神奈川)",
-        "reason": "主力エリア / 利回り18.36% / 200万",
+        "area_eval": "準主力(兵庫)",
+        "reason": "準主力エリア / 利回り23.16% / 430万",
         "priority": "A(今週)",
-        "score": 6,
+        "score": 5,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3812113/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kansai/hyogo/dim2001/3813556/show.html"
       },
       {
         "name": "",
-        "location": "埼玉県桶川市東2",
-        "price": 300,
-        "yield_surface": 18.0,
-        "yield_real": 13.5,
-        "age": 36,
-        "station_min": 11,
-        "area": 17.36,
-        "structure": "RC",
-        "risk": "中低",
+        "location": "埼玉県富士見市羽沢１",
+        "price": 425,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 58,
+        "station_min": 20,
+        "area": 34.53,
+        "structure": "木造",
+        "risk": "中",
         "area_eval": "主力(埼玉)",
-        "reason": "主力エリア / 利回り18.0% / 300万",
-        "priority": "A(今週)",
-        "score": 6,
+        "reason": "主力エリア / 425万",
+        "priority": "B(今月)",
+        "score": 4,
         "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/saitama/dim2001/3812111/show.html"
+        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/saitama/dim1004/3813579/show.html"
       },
       {
         "name": "",
-        "location": "大阪府寝屋川市萱島桜園町9-3",
-        "price": 6,
-        "yield_surface": 10.0,
-        "yield_real": 7.5,
-        "age": 63,
-        "station_min": 4,
-        "area": 52.81,
+        "location": "千葉県千葉市中央区矢作町",
+        "price": 399,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 51,
+        "station_min": 23,
+        "area": 57.93,
         "structure": "",
-        "risk": "中低",
-        "area_eval": "主力(大阪)",
-        "reason": "主力エリア / 利回り10.0% / 駅4分 / 6万",
-        "priority": "A(今週)",
-        "score": 6,
+        "risk": "中",
+        "area_eval": "主力(千葉)",
+        "reason": "主力エリア / 399万",
+        "priority": "B(今月)",
+        "score": 4,
         "site": "健美家",
         "url": ""
       },
       {
         "name": "",
-        "location": "神奈川県大和市福田6",
-        "price": 280,
-        "yield_surface": 10.71,
-        "yield_real": 8.0,
-        "age": 39,
-        "station_min": 13,
-        "area": 16.03,
-        "structure": "RC",
-        "risk": "中低",
-        "area_eval": "主力(神奈川)",
-        "reason": "主力エリア / 利回り10.71% / 280万",
-        "priority": "A(今週)",
-        "score": 5,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/kanagawa/dim2001/3812112/show.html"
+        "location": "埼玉県富士見市羽沢1-3",
+        "price": 425,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 57,
+        "station_min": 20,
+        "area": 34.53,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "主力(埼玉)",
+        "reason": "主力エリア / 425万",
+        "priority": "B(今月)",
+        "score": 4,
+        "site": "健美家",
+        "url": ""
       },
       {
         "name": "",
-        "location": "栃木県宇都宮市南大通り１−１−１２",
-        "price": 330,
+        "location": "埼玉県坂戸市西坂戸5-4-6",
+        "price": 430,
         "yield_surface": null,
         "yield_real": null,
-        "age": 38,
-        "station_min": 7,
-        "area": 25.59,
-        "structure": "SRC",
+        "age": 52,
+        "station_min": 28,
+        "area": 58.81,
+        "structure": "",
         "risk": "中",
-        "area_eval": "準主力(栃木)",
-        "reason": "準主力エリア / 駅7分 / 330万",
+        "area_eval": "主力(埼玉)",
+        "reason": "主力エリア / 430万",
         "priority": "B(今月)",
         "score": 4,
-        "site": "楽待",
-        "url": "https://www.rakumachi.jp/syuuekibukken/kanto/tochigi/dim2001/3812094/show.html"
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県 430万円 投資用土地・事業用地",
+        "price": 430,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": null,
+        "station_min": 15,
+        "area": 194.89,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 430万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
+      },
+      {
+        "name": "",
+        "location": "茨城県行方市繁昌",
+        "price": 145,
+        "yield_surface": null,
+        "yield_real": null,
+        "age": 53,
+        "station_min": 16,
+        "area": 120.18,
+        "structure": "",
+        "risk": "中",
+        "area_eval": "準主力(茨城)",
+        "reason": "準主力エリア / 145万",
+        "priority": "B(今月)",
+        "score": 3,
+        "site": "健美家",
+        "url": ""
       }
     ],
-    "total_collected": 5
+    "total_collected": 7
   },
   "ses": {
     "items": [],
     "total_collected": 0
   },
   "trend": [
-    {
-      "date": "2026-11-14",
-      "realestate_count": 4,
-      "ses_count": 41
-    },
     {
       "date": "2026-11-15",
       "realestate_count": 1,
@@ -170,6 +201,11 @@
       "date": "2026-11-27",
       "realestate_count": 5,
       "ses_count": 0
+    },
+    {
+      "date": "2026-11-28",
+      "realestate_count": 7,
+      "ses_count": 0
     }
   ],
   "form_stats": {
@@ -181,10 +217,6 @@
         "prev_month": 0,
         "diff": 0,
         "last_30days": [
-          {
-            "date": "2026-10-29",
-            "count": 0
-          },
           {
             "date": "2026-10-30",
             "count": 0
@@ -299,6 +331,10 @@
           },
           {
             "date": "2026-11-27",
+            "count": 0
+          },
+          {
+            "date": "2026-11-28",
             "count": 0
           }
         ],
@@ -322,10 +358,6 @@
         "diff": 0,
         "last_30days": [
           {
-            "date": "2026-10-29",
-            "count": 0
-          },
-          {
             "date": "2026-10-30",
             "count": 0
           },
@@ -439,6 +471,10 @@
           },
           {
             "date": "2026-11-27",
+            "count": 0
+          },
+          {
+            "date": "2026-11-28",
             "count": 0
           }
         ],
@@ -482,6 +518,7 @@
         "prev_month": 0,
         "diff": 1,
         "last_30days": {
+          "2026-11-28": 0,
           "2026-11-27": 0,
           "2026-11-26": 0,
           "2026-11-25": 0,
@@ -510,8 +547,7 @@
           "2026-11-02": 0,
           "2026-11-01": 0,
           "2026-10-31": 0,
-          "2026-10-30": 0,
-          "2026-10-29": 0
+          "2026-10-30": 0
         },
         "by_route": {
           "sell.html": 2,
